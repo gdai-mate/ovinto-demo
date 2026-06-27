@@ -76,8 +76,9 @@ h1.hero-h em{font-style:normal;color:var(--green)}
 .live-badge .pulse{width:8px;height:8px;border-radius:50%;background:#ff5a5f;animation:pulse 1.2s infinite;box-shadow:0 0 0 0 rgba(255,90,95,.6)}
 .live-timer{margin-left:auto;font-family:var(--fm);font-weight:700;font-size:18px;color:var(--amber);letter-spacing:.02em}
 .live-car{display:flex;gap:14px;padding:16px 18px;align-items:center}
-.car-thumb{width:96px;height:68px;border-radius:var(--r3);flex:none;background:var(--paper2);overflow:hidden;border:1px solid var(--line)}
-.car-thumb svg{width:100%;height:100%}
+.car-thumb{position:relative;width:96px;height:68px;border-radius:var(--r3);flex:none;background:var(--paper2);overflow:hidden;border:1px solid var(--line)}
+.car-thumb svg{width:100%;height:100%;display:block}
+.car-thumb .cimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .live-car-info h3{font-family:var(--fd);font-weight:800;font-size:18px;letter-spacing:-.01em}
 .live-car-info p{font-size:13px;color:var(--t2);margin-top:3px}
 .cond{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;font-weight:800;font-size:12px;color:#fff;flex:none}
@@ -173,6 +174,18 @@ h2.sec-h{font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.0
 .yn button{padding:8px 18px;border:1.5px solid var(--line2);border-radius:var(--r3);font-weight:700;font-size:13px;color:var(--t2);background:#fff}
 .yn button.y.on{background:var(--green-bg);border-color:var(--green);color:var(--green-d)}
 .yn button.n.on{background:var(--red-bg);border-color:var(--red);color:var(--red)}
+.cbox{width:100%;max-width:50px;height:58px;text-align:center;font-family:var(--fm);font-weight:700;font-size:22px;border:1px solid var(--line2);border-radius:var(--r3);background:#fff;color:var(--ink)}
+.cbox:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-bg)}
+.tl{position:relative;padding-left:26px;margin-top:6px}
+.tl-i{position:relative;padding:0 0 18px}
+.tl-i:before{content:'';position:absolute;left:-20px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-bg)}
+.tl-i:after{content:'';position:absolute;left:-15px;top:15px;bottom:-4px;width:1px;background:var(--line2)}
+.tl-i:last-child:after{display:none}
+.tl-i .tt{font-weight:700;font-size:14px}
+.tl-i .td{font-size:12.5px;color:var(--t3)}
+.tl-i.pending:before{background:var(--line2);box-shadow:0 0 0 3px var(--paper2)}
+.ac-wrap{max-width:480px;margin:0 auto;padding:48px 24px 80px;text-align:center}
+.ac-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh2);padding:32px 28px}
 
 /* ---------- DASHBOARD ---------- */
 .dash{display:none}.dash.ac{display:flex;min-height:100vh}
@@ -370,6 +383,7 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
             <button class="btn btn-g btn-lg" onclick="go('v-form')">Publicar mi auto gratis →</button>
             <a class="btn btn-gh btn-lg" href="#como">Ver cómo funciona</a>
           </div>
+          <button class="link" style="margin-top:14px;padding-left:0" onclick="go('v-trk')">¿Ya publicaste? Sigue tu publicación →</button>
           <div class="trust">
             <span>✓ Oferta en 24 horas</span>
             <span>✓ Agencias verificadas</span>
@@ -580,8 +594,45 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
     <h1 style="font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.02em">¡Tu auto está publicado!</h1>
     <p style="color:var(--t2);font-size:17px;margin:14px auto 6px;max-width:480px">Las agencias ya recibieron la notificación. Recibirás la mejor oferta en las próximas 24 horas por correo y WhatsApp.</p>
     <p class="mono" style="color:var(--green-d);font-weight:700;margin-bottom:28px">OV-2026-00848</p>
-    <button class="btn btn-g btn-lg" onclick="go('v-land')">Volver al inicio</button>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-g btn-lg" onclick="go('v-trk')">Seguir mi oferta →</button>
+      <button class="btn btn-gh btn-lg" onclick="go('v-land')">Volver al inicio</button>
+    </div>
   </div>
+</div>
+
+<!-- ============ VERIFICATION ============ -->
+<div id="v-ver" class="view">
+  <header class="hdr"><div class="hdr-in"><div class="logo">OVINT<span class="dot"></span>O</div><button class="link nav-r" onclick="go('v-form')">← Volver</button></div></header>
+  <div class="form-wrap" style="max-width:520px">
+    <div class="fcard">
+      <div class="feyebrow">Último paso · Verificación</div>
+      <h2 style="font-family:var(--fd);font-weight:800;font-size:24px;margin-bottom:6px">Confirma tu publicación</h2>
+      <p style="color:var(--t2);margin-bottom:22px">Enviamos un código a tu correo y a tu WhatsApp para confirmar que eres tú.</p>
+      <label style="font-weight:600;font-size:13px;color:var(--t2)">Código enviado a tu correo</label>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)">
+      </div>
+      <label style="font-weight:600;font-size:13px;color:var(--t2);margin-top:18px;display:block">Código enviado a tu WhatsApp</label>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)"><input class="cbox" maxlength="1" inputmode="numeric" oninput="cadv(this)">
+      </div>
+      <button class="btn btn-g" style="width:100%;justify-content:center;margin-top:24px" onclick="go('v-suc')">Verificar y publicar →</button>
+      <p style="font-size:12.5px;color:var(--t3);text-align:center;margin-top:12px">Demo: ingresa cualquier número, o solo haz clic en Verificar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TRACKING (público) ============ -->
+<div id="v-trk" class="view">
+  <header class="hdr"><div class="hdr-in"><div class="logo">OVINT<span class="dot"></span>O</div><button class="link nav-r" onclick="go('v-land')">← Inicio</button></div></header>
+  <div class="form-wrap" style="max-width:560px"><div class="fcard" id="trk-body"></div></div>
+</div>
+
+<!-- ============ CLIENT OFFER / ACCEPT ============ -->
+<div id="v-ac" class="view" style="min-height:100vh;background:var(--paper)">
+  <header class="hdr"><div class="hdr-in" style="justify-content:center"><div class="logo">OVINT<span class="dot"></span>O</div></div></header>
+  <div class="ac-wrap"><div class="ac-card" id="ac-body"></div></div>
 </div>
 
 <!-- ============ LOGIN ============ -->
@@ -643,13 +694,14 @@ const AGENCIES = [
 ];
 const agName = id => (AGENCIES.find(a=>a.id===id)||{}).name||'';
 const CARS = [
-  {id:'OV-2026-00847',status:'auction',ae:NOW+5*3600e3+25*60e3,body:'sedan',cl:{n:'Juan',a:'García',t:'+56 9 1234 5678',e:'juan@gmail.com'},v:{marc:'Toyota',mod:'Corolla',yr:2019,km:62000,color:'Blanco',cond:'A'},bids:[{agId:'AGC-001',amt:10150000},{agId:'AGC-003',amt:9800000},{agId:'AGC-002',amt:9200000}]},
-  {id:'OV-2026-00846',status:'auction',ae:NOW+1*3600e3+10*60e3,body:'suv',cl:{n:'María',a:'Rodríguez',t:'+56 9 2222 3333',e:'maria@gmail.com'},v:{marc:'Hyundai',mod:'Tucson',yr:2020,km:38000,color:'Negro',cond:'A'},bids:[{agId:'AGC-002',amt:14800000},{agId:'AGC-001',amt:14200000}]},
-  {id:'OV-2026-00849',status:'auction',ae:NOW+3*3600e3+40*60e3,body:'hatch',cl:{n:'Camila',a:'Soto',t:'+56 9 4444 5555',e:'camila@gmail.com'},v:{marc:'Suzuki',mod:'Swift',yr:2018,km:71000,color:'Rojo',cond:'B'},bids:[{agId:'AGC-003',amt:7600000}]},
-  {id:'OV-2026-00845',status:'offered',ae:NOW-3600e3,body:'sedan',cl:{n:'Sofía',a:'Muñoz',t:'+56 9 6666 7777',e:'sofia@gmail.com'},v:{marc:'Kia',mod:'Cerato',yr:2021,km:29000,color:'Gris',cond:'A'},bids:[{agId:'AGC-001',amt:12500000}],winner:{agId:'AGC-001',amt:12500000,commPct:2}},
-  {id:'OV-2026-00844',status:'accepted',ae:NOW-86400e3,body:'suv',cl:{n:'Diego',a:'Castro',t:'+56 9 8888 9999',e:'diego@gmail.com'},v:{marc:'Mazda',mod:'CX-5',yr:2022,km:24000,color:'Azul',cond:'A'},bids:[{agId:'AGC-003',amt:18500000}],winner:{agId:'AGC-003',amt:18500000,commPct:1.5},clientAccepted:true,commPaid:true},
-  {id:'OV-2026-00843',status:'no_offers',ae:NOW-172800e3,body:'hatch',cl:{n:'Patricia',a:'Vega',t:'+56 9 1010 2020',e:'patricia@gmail.com'},v:{marc:'Ford',mod:'Fiesta',yr:2015,km:118000,color:'Plata',cond:'C'},bids:[]},
+  {id:'OV-2026-00847',status:'auction',ae:NOW+5*3600e3+25*60e3,body:'sedan',photo:'corolla.jpg',cl:{n:'Juan',a:'García',t:'+56 9 1234 5678',e:'juan@gmail.com'},v:{marc:'Toyota',mod:'Corolla',yr:2019,km:62000,color:'Azul',cond:'A'},bids:[{agId:'AGC-001',amt:10150000},{agId:'AGC-003',amt:9800000},{agId:'AGC-002',amt:9200000}]},
+  {id:'OV-2026-00846',status:'auction',ae:NOW+1*3600e3+10*60e3,body:'suv',photo:'tucson.jpg',cl:{n:'María',a:'Rodríguez',t:'+56 9 2222 3333',e:'maria@gmail.com'},v:{marc:'Hyundai',mod:'Tucson',yr:2020,km:38000,color:'Verde',cond:'A'},bids:[{agId:'AGC-002',amt:14800000},{agId:'AGC-001',amt:14200000}]},
+  {id:'OV-2026-00849',status:'auction',ae:NOW+3*3600e3+40*60e3,body:'hatch',photo:'swift.jpg',cl:{n:'Camila',a:'Soto',t:'+56 9 4444 5555',e:'camila@gmail.com'},v:{marc:'Suzuki',mod:'Swift',yr:2018,km:71000,color:'Azul',cond:'B'},bids:[{agId:'AGC-003',amt:7600000}]},
+  {id:'OV-2026-00845',status:'offered',ae:NOW-3600e3,body:'sedan',photo:'cerato.jpg',cl:{n:'Sofía',a:'Muñoz',t:'+56 9 6666 7777',e:'sofia@gmail.com'},v:{marc:'Kia',mod:'Cerato',yr:2021,km:29000,color:'Plata',cond:'A'},bids:[{agId:'AGC-001',amt:12500000}],winner:{agId:'AGC-001',amt:12500000,commPct:2}},
+  {id:'OV-2026-00844',status:'accepted',ae:NOW-86400e3,body:'suv',photo:'cx5.jpg',cl:{n:'Diego',a:'Castro',t:'+56 9 8888 9999',e:'diego@gmail.com'},v:{marc:'Mazda',mod:'CX-5',yr:2022,km:24000,color:'Gris',cond:'A'},bids:[{agId:'AGC-003',amt:18500000}],winner:{agId:'AGC-003',amt:18500000,commPct:1.5},clientAccepted:true,commPaid:true},
+  {id:'OV-2026-00843',status:'no_offers',ae:NOW-172800e3,body:'hatch',photo:'fiesta.jpg',cl:{n:'Patricia',a:'Vega',t:'+56 9 1010 2020',e:'patricia@gmail.com'},v:{marc:'Ford',mod:'Fiesta',yr:2015,km:118000,color:'Gris',cond:'C'},bids:[]},
 ];
+function carThumb(c,style){return `<div class="car-thumb" ${style?`style="${style}"`:''}>${carSVG(c.body,c.v.color)}<img class="cimg" src="img/${c.photo}" loading="lazy" alt="${c.v.marc} ${c.v.mod}" onerror="this.remove()"></div>`;}
 const SLB={auction:'b-green',offered:'b-amber',accepted:'b-green',rejected:'b-red',no_offers:'b-gy',cancelled:'b-gy'};
 const SLT={auction:'En subasta',offered:'Esperando al cliente',accepted:'Oferta aceptada',rejected:'Rechazada',no_offers:'Sin ofertas',cancelled:'Cancelada'};
 const net = (amt,pct)=>Math.round(amt*(1-pct/100));
@@ -669,19 +721,20 @@ function shade(hex,p){let n=parseInt(hex.slice(1),16),r=(n>>16)+p,g=((n>>8)&255)
 // ---------- ROUTER ----------
 function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('ac'));document.getElementById('v-dash').classList.remove('ac');
   if(id==='v-dash'){document.getElementById('v-dash').classList.add('ac');}else{document.getElementById(id).classList.add('ac');}
+  if(id==='v-trk')fillTrk();
   window.scrollTo(0,0);}
 function setTrack(t){document.body.className=t==='seller'?'t-seller':'t-agency';
   document.getElementById('tg-s').classList.toggle('on',t==='seller');document.getElementById('tg-a').classList.toggle('on',t==='agency');}
 
 // ---------- LIVE WIDGET (signature) ----------
-let liveCar={id:'OV-2026-00846',name:'Hyundai Tucson 2020',sub:'María R. · 38.000 km · Negro · Automática',cond:'A',body:'suv',color:'Negro',ae:NOW+1*3600e3+10*60e3,
+let liveCar={id:'OV-2026-00846',name:'Hyundai Tucson 2020',sub:'María R. · 38.000 km · Verde · Automática',cond:'A',body:'suv',color:'Verde',photo:'tucson.jpg',ae:NOW+1*3600e3+10*60e3,
   bids:[{ag:'Motormundo SpA',amt:14800000},{ag:'AutoPrime Santiago',amt:14200000}]};
 function renderLive(){
   const sorted=[...liveCar.bids].sort((a,b)=>b.amt-a.amt);
   const best=sorted[0];
   const w=document.getElementById('liveWidget');if(!w)return;
   w.innerHTML=`<div class="live-top"><div class="live-badge"><span class="pulse"></span>Subasta en vivo</div><div class="live-timer" id="lt">--:--:--</div></div>
-  <div class="live-car"><div class="car-thumb">${carSVG(liveCar.body,liveCar.color)}</div>
+  <div class="live-car"><div class="car-thumb">${carSVG(liveCar.body,liveCar.color)}<img class="cimg" src="img/${liveCar.photo}" alt="${liveCar.name}" onerror="this.remove()"></div>
   <div class="live-car-info"><h3>${liveCar.name}</h3><p>${liveCar.sub}</p></div>
   <span class="cond c${liveCar.cond}" style="margin-left:auto">${liveCar.cond}</span></div>
   <div class="bids" id="liveBids">${sorted.map((b,i)=>`<div class="bid-row"><div class="bid-rank ${i===0?'gold':''}">${i+1}</div><div class="bid-ag">${b.ag}</div><div class="bid-amt ${i===0?'win':''}"><div class="g">${fmt(b.amt)}</div>${i===0?`<small>→ recibes ${fmt(net(b.amt,2))}</small>`:''}</div></div>`).join('')}</div>
@@ -713,9 +766,44 @@ function buildDots(){document.getElementById('dots').innerHTML=FSTEPS.map((s,i)=
 function showFstep(){document.querySelectorAll('.fstep').forEach(s=>s.classList.toggle('ac',+s.dataset.step===fstep));
   document.getElementById('fprev').style.display=fstep>1?'inline-flex':'none';
   document.getElementById('fnext').textContent=fstep===6?'Publicar mi auto →':'Continuar →';buildDots();}
-function formStep(d){if(fstep===6&&d===1){go('v-suc');fstep=1;showFstep();return;}fstep=Math.max(1,Math.min(6,fstep+d));showFstep();window.scrollTo(0,0);}
+function formStep(d){if(fstep===6&&d===1){go('v-ver');fstep=1;showFstep();return;}fstep=Math.max(1,Math.min(6,fstep+d));showFstep();window.scrollTo(0,0);}
 function pickCond(el){document.querySelectorAll('.cond-card').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');}
 function ynPick(el){el.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
+function cadv(el){if(el.value&&el.nextElementSibling&&el.nextElementSibling.classList.contains('cbox'))el.nextElementSibling.focus();}
+
+// ----- TRACKING -----
+function fillTrk(){const c=CARS[1];const b=bestBid(c);let rem=c.ae-Date.now();if(rem<0)rem=0;
+  document.getElementById('trk-body').innerHTML=`
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><span class="opid">${c.id}</span><span class="badge b-green"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>En subasta</span></div>
+  <div style="display:flex;gap:16px;align-items:center;margin-bottom:18px">${carThumb(c,'width:120px;height:84px')}<div><h2 style="font-family:var(--fd);font-weight:800;font-size:22px">${c.v.marc} ${c.v.mod} ${c.v.yr}</h2><div style="color:var(--t2);font-size:14px">${c.cl.n} · ${fmtKm(c.v.km)} · ${c.v.color}</div></div></div>
+  <div style="text-align:center;background:var(--ink);border-radius:var(--r2);padding:20px;color:#fff;margin-bottom:18px"><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aeb8c7">Cierra en</div><div class="mono" data-timer="${c.ae}" style="font-size:34px;font-weight:700;color:var(--amber)">--:--:--</div></div>
+  <div class="sg" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:20px">${stat('5','Agencias notificadas')}${stat(c.bids.length,'Ofertas recibidas')}${stat(b?fmt(net(b.amt,2)):'—','Mejor oferta (neta)')}</div>
+  <div style="font-weight:700;font-size:13px;margin-bottom:10px">Historial</div>
+  <div class="tl"><div class="tl-i"><div class="tt">Publicación creada</div><div class="td">Tu auto se publicó y las agencias fueron notificadas</div></div>
+  <div class="tl-i"><div class="tt">${c.bids.length} ofertas recibidas</div><div class="td">Las agencias están compitiendo a sobre cerrado</div></div>
+  <div class="tl-i pending"><div class="tt">Esperando cierre de subasta</div><div class="td">Te enviaremos la mejor oferta por correo y WhatsApp</div></div></div>
+  <button class="btn btn-gh" style="width:100%;justify-content:center;margin-top:20px" onclick="toast('Publicación cancelada (demo)')">Cancelar mi publicación</button>`;
+  tickAll();}
+
+// ----- CLIENT OFFER / ACCEPT -----
+function showClientOffer(carId){const c=CARS.find(x=>x.id===carId)||CARS[1];const b=bestBid(c);const amt=net(b.amt,2);
+  document.getElementById('ac-body').innerHTML=`
+  <div style="width:64px;height:64px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 18px">💰</div>
+  <h1 style="font-family:var(--fx);font-weight:800;font-size:27px;letter-spacing:-.02em;line-height:1.1">¡Tenemos una oferta para tu auto!</h1>
+  <div style="margin:18px 0">${carThumb(c,'width:140px;height:96px;margin:0 auto')}</div>
+  <div style="font-weight:700;font-size:16px">${c.v.marc} ${c.v.mod} ${c.v.yr}</div>
+  <div class="big-net" style="margin:20px 0"><div class="l">Recibes</div><div class="n">${fmt(amt)}</div></div>
+  <button class="btn btn-g btn-lg" style="width:100%;justify-content:center" onclick="acAccept('${c.id}',${amt})">Acepto la oferta de ${fmt(amt)} →</button>
+  <button class="btn btn-gh" style="width:100%;justify-content:center;margin-top:10px" onclick="go('v-land')">No por ahora</button>
+  <p style="font-size:11.5px;color:var(--t3);margin-top:16px;line-height:1.5">Al aceptar, coordinaremos la entrega del vehículo. La oferta es firme y sin costo para ti.</p>`;
+  go('v-ac');}
+function acAccept(id,amt){document.getElementById('ac-body').innerHTML=`
+  <div style="width:72px;height:72px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 18px">🎉</div>
+  <h1 style="font-family:var(--fx);font-weight:800;font-size:27px;letter-spacing:-.02em;line-height:1.1">¡Felicitaciones!</h1>
+  <p style="color:var(--t2);margin:14px 0 6px;font-size:16px">Aceptaste la oferta de <b style="color:var(--green-d)">${fmt(amt)}</b>. Un agente de OVINTO te contactará para coordinar la entrega.</p>
+  <p class="mono" style="color:var(--green-d);font-weight:700;margin:10px 0 24px">${id}</p>
+  <button class="btn btn-g btn-lg" style="width:100%;justify-content:center" onclick="go('v-land')">Listo</button>`;
+  window.scrollTo(0,0);}
 
 // ---------- AUTH ----------
 const USERS={admin:{ini:'OV',nm:'Equipo OVINTO',rl:'Admin OVINTO',role:'admin'},ag:{ini:'AP',nm:'AutoPrime Santiago',rl:'Agencia',role:'ag',agId:'AGC-001'},mgr:{ini:'CP',nm:'Carlos Pérez',rl:'Manager',role:'mgr'},slr:{ini:'AL',nm:'Andrea López',rl:'Vendedor',role:'slr'}};
@@ -725,8 +813,8 @@ function doLogin(){cu=USERS.admin;enterDash();}
 function enterDash(){document.getElementById('u-ini').textContent=cu.ini;document.getElementById('u-nm').textContent=cu.nm;document.getElementById('u-rl').textContent=cu.rl;buildNav();go('v-dash');}
 
 const NAVS={
-  admin:[['Resumen','resumen','▦'],['Subastas activas','live','⚡'],['Historial','hist','▤'],['Comisiones','comm','✓'],['Agencias','ags','▢'],['Automotoras','autos','◇']],
-  ag:[['Autos disponibles','aglive','⚡'],['Mis ofertas','agmine','▤']],
+  admin:[['Resumen','resumen','▦'],['Subastas activas','live','⚡'],['Historial','hist','▤'],['Comisiones','comm','✓'],['Agencias','ags','▢'],['Automotoras','autos','◇'],['Vouchers','vou','◷']],
+  ag:[['Autos disponibles','aglive','⚡'],['Mis ofertas','agmine','▤'],['Pagos','agpay','▢']],
   mgr:[['Operaciones','mops','▦'],['Vendedores','mslr','◇']],
   slr:[['Mis clientes','skan','▦'],['Mi QR','sqr','◇']]
 };
@@ -748,12 +836,12 @@ const RENDER={
     <div class="sg">${stat(active.length,'Subastas activas ahora',1)}${stat('1','Cierran en 2 horas')}${stat('1','Esperando al cliente')}</div>
     <div class="sg">${stat('$277.500','Comisiones cobradas')}${stat('0','Comisiones pendientes')}${stat('1','Agencias con 2+ impagas')}</div>
     <div class="card"><div style="padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700">Subastas cerrando pronto</div>
-    ${active.map(c=>{const b=bestBid(c);return `<div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line)"><div class="car-thumb" style="width:64px;height:46px">${carSVG(c.body,c.v.color)}</div><div><div style="font-weight:700">${c.v.marc} ${c.v.mod} ${c.v.yr}</div><div class="opid">${c.id}</div></div><div style="margin-left:auto;text-align:right"><div class="mono" style="font-weight:700;color:var(--amber)" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2)">${b?fmt(b.amt):'sin ofertas'}</div></div></div>`}).join('')}</div>`;},
+    ${active.map(c=>{const b=bestBid(c);return `<div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line)">${carThumb(c,'width:64px;height:46px')}<div><div style="font-weight:700">${c.v.marc} ${c.v.mod} ${c.v.yr}</div><div class="opid">${c.id}</div></div><div style="margin-left:auto;text-align:right"><div class="mono" style="font-weight:700;color:var(--amber)" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2)">${b?fmt(b.amt):'sin ofertas'}</div></div></div>`}).join('')}</div>`;},
 
   live(){const active=CARS.filter(c=>c.status==='auction').sort((a,b)=>a.ae-b.ae);
     return `<div class="page-h">Subastas activas</div><div class="page-sub">${active.length} subastas corriendo ahora</div>
     ${active.map(c=>{const b=bestBid(c);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="badge b-green"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>En subasta</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
-    <div class="acard-grid"><div><h3>${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.cl.n} ${c.cl.a} · ${fmtKm(c.v.km)} · ${c.v.color}</div>
+    <div class="acard-grid"><div><div style="display:flex;gap:14px;align-items:center">${carThumb(c,'width:108px;height:74px')}<div><h3 style="margin:0 0 2px">${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.cl.n} ${c.cl.a} · ${fmtKm(c.v.km)} · ${c.v.color}</div></div></div>
     <div class="bids" style="padding:8px 0 0">${c.bids.length?rankRows(c,true):'<p style="color:var(--t3);font-size:14px;padding:8px 0">Aún sin ofertas</p>'}</div>
     <div class="acard-actions"><button class="btn btn-gh btn-sm" onclick="carModal('${c.id}')">Ver ficha</button>${b?`<button class="btn btn-g btn-sm" onclick="sendModal('${c.id}')">Enviar mejor oferta al cliente →</button>`:''}<span class="comm-tag">Comisión: 2% <button onclick="toast('Editar comisión (demo)')">✎</button></span></div></div>
     <div class="timer-box"><div class="lbl">Cierra en</div><div class="tm" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2);margin-top:6px">${c.bids.length} oferta(s)</div></div></div></div>`}).join('')}`;},
@@ -788,7 +876,7 @@ const RENDER={
     return `<div class="page-h">Autos disponibles</div><div class="page-sub">Ofertas a sobre cerrado · nadie ve tu número</div>
     <div class="alert" style="background:var(--green-bg);border-color:#bce7d8;color:var(--green-d)">Ofrece tu mejor precio. Nadie ve la oferta de las otras agencias. Ganas con tu número real.</div>
     ${active.map(c=>{const mine=c.bids.find(b=>b.agId===cu.agId);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
-    <div class="acard-grid"><div><h3>${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.v.color} · ${fmtKm(c.v.km)} · Automática · ${c.v.cond==='A'?'Excelente':'Buen'} estado</div>
+    <div class="acard-grid"><div><div style="display:flex;gap:14px;align-items:center">${carThumb(c,'width:108px;height:74px')}<div><h3 style="margin:0 0 2px">${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.v.color} · ${fmtKm(c.v.km)} · Automática · ${c.v.cond==='A'?'Excelente':'Buen'} estado</div></div></div>
     <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><span class="badge b-green">✓ Service al día</span><span class="badge b-green">✓ Revisión técnica</span><span class="badge b-green">✓ Permiso circ.</span></div>
     ${mine?`<div style="margin-top:12px;padding:11px 14px;background:var(--green-bg);border-radius:var(--r3);font-size:14px;font-weight:600;color:var(--green-d)">Tu oferta registrada: ${fmt(mine.amt)} <button class="qrbtn" style="margin-left:8px" onclick="toast('Modificar oferta')">Modificar</button></div>`:`<div class="bid-input"><input placeholder="Tu oferta en CLP" id="bid-${c.id}"><button class="btn btn-ink" onclick="toast('Oferta enviada a sobre cerrado')">Ofertar →</button></div>`}</div>
     <div class="timer-box"><div class="lbl">Cierra en</div><div class="tm" data-timer="${c.ae}">--:--:--</div></div></div></div>`}).join('')}`;},
@@ -818,7 +906,18 @@ const RENDER={
     return `<div class="page-h">Mis clientes</div><div class="page-sub">Pipeline de tus operaciones</div>
     <div class="sg c4">${stat('4','Total')}${stat('2','Activas')}${stat('1','Esperando')}${stat('1','Aceptadas')}</div>
     <div class="kanban">${cols.map(col=>{const items=CARS.filter(c=>c.status===col[0]);return `<div class="kcol"><div class="kcol-h"><span class="badge ${col[2]}">${col[1]}</span><span class="kcount">${items.length}</span></div>
-    ${items.map(c=>{const b=bestBid(c);return `<div class="kcard" onclick="carModal('${c.id}')"><div class="opid">${c.id}</div><h4>${c.v.marc} ${c.v.mod} ${c.v.yr}</h4><div class="meta">${c.cl.n} ${c.cl.a}</div>${b&&c.status!=='auction'?`<div class="net">${fmt(net(b.amt,2))}</div>`:''}</div>`}).join('')||'<p style="color:var(--t3);font-size:13px;padding:8px">—</p>'}</div>`}).join('')}</div>`;},
+    ${items.map(c=>{const b=bestBid(c);return `<div class="kcard" onclick="carModal('${c.id}')">${carThumb(c,'width:100%;height:96px;margin-bottom:9px')}<div class="opid">${c.id}</div><h4>${c.v.marc} ${c.v.mod} ${c.v.yr}</h4><div class="meta">${c.cl.n} ${c.cl.a}</div>${b&&c.status!=='auction'?`<div class="net">${fmt(net(b.amt,2))}</div>`:''}</div>`}).join('')||'<p style="color:var(--t3);font-size:13px;padding:8px">—</p>'}</div>`}).join('')}</div>`;},
+  vou(){return `<div class="page-h">Vouchers</div><div class="page-sub">Se emiten cuando un cliente acepta y luego se arrepiente de vender</div>
+    <div class="sg c4">${stat('1','Vouchers emitidos')}${stat('$250.000','Valor retenido')}${stat('1','Activos')}${stat('0','Usados')}</div>
+    <div class="card"><table class="tbl"><thead><tr><th>Voucher</th><th>Agencia</th><th>Cliente</th><th>Monto</th><th>Emitido</th><th>Estado</th></tr></thead><tbody>
+    <tr><td class="id">VC-2026-0012</td><td>CarMax Chile</td><td>Sofía Muñoz</td><td>${fmt(250000)}</td><td>22 jun 2026</td><td><span class="badge b-amber">Activo</span></td></tr>
+    </tbody></table></div>`;},
+  agpay(){return `<div class="page-h">Pagos</div><div class="page-sub">Métodos y comisiones pagadas</div>
+    <div class="card" style="padding:20px"><div style="font-weight:700;margin-bottom:14px">Método de pago</div>
+    <div style="display:flex;align-items:center;gap:14px;padding:14px;border:1px solid var(--line);border-radius:var(--r2)"><div style="width:44px;height:30px;border-radius:5px;background:var(--ink)"></div><div><div style="font-weight:700;font-size:14.5px">Visa •••• 4291</div><div style="font-size:12.5px;color:var(--t3)">AutoPrime Santiago · vence 09/28</div></div><button class="qrbtn" style="margin-left:auto" onclick="toast('Cambiar método (demo)')">Cambiar</button></div></div>
+    <div class="card"><table class="tbl"><thead><tr><th>ID</th><th>Vehículo</th><th>Comisión</th><th>Fecha</th><th>Estado</th></tr></thead><tbody>
+    <tr><td class="id">OV-2026-00844</td><td>Mazda CX-5 2022</td><td class="green">${fmt(277500)}</td><td>26 jun 2026</td><td><span class="badge b-green">Pagada</span></td></tr>
+    </tbody></table></div>`;},
   sqr(){return `<div class="page-h">Mi QR</div><div class="page-sub">Vincula clientes a tu nombre</div>
     <div class="card" style="padding:30px;text-align:center;max-width:360px"><div style="width:180px;height:180px;margin:0 auto 18px;background:var(--ink);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">▦ QR</div>
     <p style="font-size:14px;color:var(--t2);margin-bottom:16px">Cuando un cliente escanea este QR, sus datos quedan vinculados a tu nombre.</p>
@@ -828,7 +927,7 @@ const RENDER={
 // ---------- MODALS ----------
 function carModal(id){const c=CARS.find(x=>x.id===id);const isAdmin=cu&&cu.role==='admin';
   document.getElementById('ov-t').textContent=`${c.v.marc} ${c.v.mod} ${c.v.yr}`;
-  document.getElementById('ov-b').innerHTML=`<div class="car-thumb" style="width:100%;height:150px;margin-bottom:16px">${carSVG(c.body,c.v.color)}</div>
+  document.getElementById('ov-b').innerHTML=`${carThumb(c,'width:100%;height:170px;margin-bottom:16px')}
   <div class="dgrid"><div class="di"><div class="k">Cliente</div><div class="v">${c.cl.n} ${c.cl.a}</div></div><div class="di"><div class="k">Estado</div><div class="v"><span class="badge ${SLB[c.status]}">${SLT[c.status]}</span></div></div>
   <div class="di"><div class="k">Kilometraje</div><div class="v">${fmtKm(c.v.km)}</div></div><div class="di"><div class="k">Color</div><div class="v">${c.v.color}</div></div>
   <div class="di"><div class="k">Condición</div><div class="v">${c.v.cond} · ${{A:'Excelente',B:'Bueno',C:'Regular',D:'Deteriorado'}[c.v.cond]}</div></div>${isAdmin?`<div class="di"><div class="k">Patente</div><div class="v">BBPK12</div></div>`:''}</div>
@@ -841,7 +940,7 @@ function sendModal(id){const c=CARS.find(x=>x.id===id);const b=bestBid(c);
   <div class="di"><div class="k">Comisión OVINTO</div><div class="v">2% <button onclick="toast('Editar %')" style="color:var(--green-d)">✎</button></div></div><div class="di"><div class="k">Vehículo</div><div class="v">${c.v.marc} ${c.v.mod}</div></div></div>
   <div class="big-net"><div class="l">El cliente recibe</div><div class="n">${fmt(net(b.amt,2))}</div></div>
   <div class="msg-prev">"Hola ${c.cl.n}, tenemos una oferta de ${fmt(net(b.amt,2))} por tu ${c.v.marc} ${c.v.mod}. Ingresa para aceptarla. — OVINTO"</div>
-  <button class="btn btn-g" style="width:100%;justify-content:center" onclick="closeOv();toast('Oferta enviada al cliente por correo y WhatsApp')">Enviar oferta al cliente →</button>`;
+  <button class="btn btn-g" style="width:100%;justify-content:center" onclick="closeOv();toast('Oferta enviada. Vista previa de lo que recibe el cliente:');setTimeout(function(){showClientOffer('${id}')},750)">Enviar oferta al cliente →</button>`;
   openOv();}
 function payModal(id){const c=CARS.find(x=>x.id===id);const w=c.winner;
   document.getElementById('ov-t').textContent='Pagar comisión';
