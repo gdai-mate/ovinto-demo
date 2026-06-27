@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>OVINTO — El mejor precio gana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1A2B; --ink2:#1d2d42; --paper:#FAF8F3; --paper2:#F1EDE4; --white:#ffffff;
+  --green:#0BA678; --green-d:#087d5b; --green-bg:#E5F4EF;
+  --amber:#F5A623; --amber-bg:#FDF1DC;
+  --line:#E4DECF; --line2:#D6CFBC;
+  --t1:#0E1A2B; --t2:#5c6677; --t3:#8b93a1;
+  --red:#E5484D; --red-bg:#FCEBEB;
+  --blue:#3C6CE7;
+  --r:14px; --r2:10px; --r3:8px;
+  --sh:0 1px 2px rgba(14,26,43,.04),0 8px 24px rgba(14,26,43,.06);
+  --sh2:0 2px 4px rgba(14,26,43,.05),0 18px 50px rgba(14,26,43,.10);
+  --fd:'Archivo',sans-serif; --fx:'Archivo Expanded','Archivo',sans-serif;
+  --fb:'Hanken Grotesk',sans-serif; --fm:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--paper);color:var(--t1);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.view{display:none}.view.ac{display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,select,textarea{font-family:inherit;font-size:16px}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--fm);font-variant-numeric:tabular-nums}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- HEADER ---------- */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.logo{font-family:var(--fx);font-weight:900;font-size:23px;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:1px}
+.logo .dot{width:7px;height:7px;border-radius:50%;background:var(--green);margin:0 1px;align-self:flex-end;margin-bottom:6px}
+.logo small{display:block;font-family:var(--fb);font-weight:600;font-size:9px;letter-spacing:.34em;color:var(--t3);margin-top:-3px}
+.nav-r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.toggle{display:flex;background:var(--paper2);border:1px solid var(--line2);border-radius:999px;padding:3px}
+.toggle button{padding:7px 16px;border-radius:999px;font-weight:700;font-size:13.5px;color:var(--t2);transition:.18s}
+.toggle button.on{background:var(--ink);color:#fff}
+.btn{padding:11px 20px;border-radius:var(--r3);font-weight:700;font-size:14.5px;transition:.16s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.btn-g{background:var(--green);color:#fff;box-shadow:0 1px 2px rgba(8,125,91,.3)}
+.btn-g:hover{background:var(--green-d)}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:var(--ink2)}
+.btn-gh{background:transparent;color:var(--ink);border:1px solid var(--line2)}.btn-gh:hover{background:var(--paper2)}
+.btn-lg{padding:15px 28px;font-size:16px;border-radius:var(--r2)}
+.btn-sm{padding:8px 14px;font-size:13px}
+.link{color:var(--t2);font-weight:600;font-size:14.5px;padding:9px 12px;border-radius:var(--r3)}.link:hover{color:var(--ink);background:var(--paper2)}
+
+/* ---------- HERO ---------- */
+.hero{padding:60px 0 40px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--green-d);background:var(--green-bg);padding:7px 13px;border-radius:999px;margin-bottom:22px}
+.eyebrow.amb{color:#9a6a10;background:var(--amber-bg)}
+.eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+.eyebrow.amb .pulse{background:var(--amber)}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+h1.hero-h{font-family:var(--fx);font-weight:900;font-size:55px;line-height:1.0;letter-spacing:-.02em;color:var(--ink)}
+h1.hero-h em{font-style:normal;color:var(--green)}
+.hero-sub{font-size:19px;color:var(--t2);margin:22px 0 30px;max-width:520px;line-height:1.5}
+.hero-cta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.trust{display:flex;gap:22px;margin-top:34px;flex-wrap:wrap}
+.trust span{font-size:14px;color:var(--t2);font-weight:600;display:flex;align-items:center;gap:8px}
+.trust svg{flex:none}
+.comm-note{margin-top:26px;font-size:13.5px;color:var(--t3);max-width:480px;line-height:1.5;border-left:2px solid var(--line2);padding-left:14px}
+
+/* ---------- LIVE AUCTION WIDGET (signature) ---------- */
+.live-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden}
+.live-top{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--line);background:var(--ink);color:#fff}
+.live-badge{display:flex;align-items:center;gap:7px;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.live-badge .pulse{width:8px;height:8px;border-radius:50%;background:#ff5a5f;animation:pulse 1.2s infinite;box-shadow:0 0 0 0 rgba(255,90,95,.6)}
+.live-timer{margin-left:auto;font-family:var(--fm);font-weight:700;font-size:18px;color:var(--amber);letter-spacing:.02em}
+.live-car{display:flex;gap:14px;padding:16px 18px;align-items:center}
+.car-thumb{width:96px;height:68px;border-radius:var(--r3);flex:none;background:var(--paper2);overflow:hidden;border:1px solid var(--line)}
+.car-thumb svg{width:100%;height:100%}
+.live-car-info h3{font-family:var(--fd);font-weight:800;font-size:18px;letter-spacing:-.01em}
+.live-car-info p{font-size:13px;color:var(--t2);margin-top:3px}
+.cond{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;font-weight:800;font-size:12px;color:#fff;flex:none}
+.cA{background:var(--green)}.cB{background:var(--blue)}.cC{background:var(--amber);color:#5a3d05}.cD{background:var(--red)}
+.bids{padding:4px 18px 8px}
+.bid-row{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid var(--line)}
+.bid-rank{width:24px;height:24px;border-radius:7px;background:var(--paper2);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:var(--t2);flex:none}
+.bid-rank.gold{background:var(--amber);color:#5a3d05}
+.bid-ag{font-weight:600;font-size:14.5px}
+.bid-amt{margin-left:auto;text-align:right}
+.bid-amt .g{font-family:var(--fm);font-weight:700;font-size:15.5px}
+.bid-amt.win .g{color:var(--green)}
+.bid-amt small{display:block;font-size:11px;color:var(--green-d);font-weight:600;margin-top:1px}
+.flash{animation:flash .9s ease}
+@keyframes flash{0%{background:var(--green-bg)}100%{background:transparent}}
+.live-foot{padding:13px 18px;background:var(--paper);border-top:1px solid var(--line);display:flex;align-items:center;font-size:13px;color:var(--t2);font-weight:600}
+.live-foot .net{margin-left:auto;color:var(--ink);font-weight:700}
+.live-foot .net b{font-family:var(--fm);color:var(--green-d)}
+
+/* ---------- SECTIONS ---------- */
+.sec{padding:54px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 40px}
+.sec-head .eyebrow{margin-bottom:14px}
+h2.sec-h{font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.02em;color:var(--ink);line-height:1.08}
+.sec-head p{font-size:17px;color:var(--t2);margin-top:12px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 20px}
+.step-n{font-family:var(--fm);font-weight:700;font-size:13px;color:var(--green);border:1px solid var(--green);width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.step h4{font-family:var(--fd);font-weight:700;font-size:17px;margin-bottom:7px}
+.step p{font-size:14px;color:var(--t2);line-height:1.5}
+.spine{background:var(--ink);color:#fff;border-radius:20px;padding:46px 44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.spine-l h2{font-family:var(--fx);font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1.1}
+.spine-l p{color:#aeb8c7;margin-top:16px;font-size:16px;line-height:1.6}
+.spine-r{display:flex;flex-direction:column;gap:16px}
+.spine-face{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:18px 20px}
+.spine-face .who{font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.spine-face.ag .who{color:var(--amber)}
+.spine-face p{font-size:14.5px;color:#dfe5ee;line-height:1.5}
+.bullets{display:flex;flex-direction:column;gap:2px;max-width:640px;margin:0 auto}
+.blt{display:flex;gap:15px;padding:18px 4px;border-bottom:1px solid var(--line)}
+.blt:last-child{border-bottom:none}
+.blt-ic{width:40px;height:40px;border-radius:11px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex:none}
+.ag-track .blt-ic{background:var(--amber-bg)}
+.blt h4{font-family:var(--fd);font-weight:700;font-size:16.5px;margin-bottom:3px}
+.blt p{font-size:14.5px;color:var(--t2);line-height:1.5}
+.cta-band{text-align:center;padding:50px 0}
+.cta-band h2{font-family:var(--fx);font-weight:800;font-size:32px;letter-spacing:-.02em;margin-bottom:10px}
+.cta-band p{color:var(--t2);font-size:17px;margin-bottom:26px}
+
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:40px 0;margin-top:30px}
+.ftr-in{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ftr-links{margin-left:auto;display:flex;gap:24px}
+.ftr-links a{font-size:14px;color:var(--t2)}.ftr-links a:hover{color:var(--ink)}
+.ftr small{color:var(--t3);font-size:13px}
+
+/* track visibility */
+.t-seller .agc-only{display:none}
+.t-agency .sel-only{display:none}
+
+/* ---------- FORM ---------- */
+.form-wrap{max-width:680px;margin:0 auto;padding:40px 24px 80px}
+.fcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:30px}
+.prog{height:5px;background:var(--paper2);border-radius:99px;overflow:hidden;margin-bottom:22px}
+.prog i{display:block;height:100%;background:var(--green);border-radius:99px;transition:.4s;width:16.6%}
+.dots{display:flex;justify-content:space-between;margin-bottom:26px}
+.dot-s{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.dot-c{width:32px;height:32px;border-radius:50%;border:2px solid var(--line2);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--t3);background:#fff;transition:.2s}
+.dot-s.on .dot-c{border-color:var(--green);color:var(--green)}
+.dot-s.done .dot-c{background:var(--green);border-color:var(--green);color:#fff}
+.dot-s span{font-size:10px;font-weight:700;letter-spacing:.05em;color:var(--t3);text-transform:uppercase}
+.dot-s.on span{color:var(--ink)}
+.fstep{display:none}.fstep.ac{display:block}
+.feyebrow{font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--t2);margin-bottom:18px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{margin-bottom:16px}
+.fld.full{grid-column:1/-1}
+.fld label{display:block;font-weight:600;font-size:13px;color:var(--t2);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;padding:12px 14px;border:1px solid var(--line2);border-radius:var(--r3);background:#fff;color:var(--ink);transition:.15s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-bg)}
+.fnav{display:flex;gap:12px;margin-top:26px}
+.fnav .ml{margin-left:auto}
+.cond-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cond-card{border:1.5px solid var(--line2);border-radius:var(--r2);padding:16px;cursor:pointer;transition:.15s;background:#fff}
+.cond-card:hover{border-color:var(--t3)}
+.cond-card.sel{border-color:var(--green);box-shadow:0 0 0 3px var(--green-bg)}
+.cond-card .ch{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.cond-card h4{font-family:var(--fd);font-weight:700;font-size:15px}
+.cond-card p{font-size:12.5px;color:var(--t2);line-height:1.45}
+.toggle-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.toggle-row span{font-weight:600;font-size:15px}
+.yn{margin-left:auto;display:flex;gap:8px}
+.yn button{padding:8px 18px;border:1.5px solid var(--line2);border-radius:var(--r3);font-weight:700;font-size:13px;color:var(--t2);background:#fff}
+.yn button.y.on{background:var(--green-bg);border-color:var(--green);color:var(--green-d)}
+.yn button.n.on{background:var(--red-bg);border-color:var(--red);color:var(--red)}
+
+/* ---------- DASHBOARD ---------- */
+.dash{display:none}.dash.ac{display:flex;min-height:100vh}
+.side{width:248px;flex:none;background:var(--white);border-right:1px solid var(--line);display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.side-top{padding:20px}
+.side-grp{padding:8px 14px 4px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-top:8px}
+.ni{display:flex;align-items:center;gap:11px;padding:10px 14px;margin:1px 10px;border-radius:var(--r3);font-weight:600;font-size:14.5px;color:var(--t2);width:calc(100% - 20px);text-align:left;transition:.12s}
+.ni:hover{background:var(--paper2);color:var(--ink)}
+.ni.on{background:var(--ink);color:#fff}
+.ni .nbadge{margin-left:auto;background:var(--red);color:#fff;font-size:11px;font-weight:700;min-width:19px;height:19px;border-radius:99px;display:flex;align-items:center;justify-content:center;padding:0 5px}
+.ni.on .nbadge{background:rgba(255,255,255,.25)}
+.side-user{margin-top:auto;padding:14px;border-top:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.avatar{width:38px;height:38px;border-radius:10px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex:none}
+.side-user .nm{font-weight:700;font-size:13.5px;line-height:1.2}
+.side-user .rl{font-size:11.5px;color:var(--t3)}
+.main{flex:1;min-width:0;background:var(--paper);overflow-x:hidden}
+.main-in{padding:30px 36px;max-width:1080px}
+.page-h{font-family:var(--fx);font-weight:800;font-size:28px;letter-spacing:-.02em;margin-bottom:3px}
+.page-sub{color:var(--t2);font-size:15px;margin-bottom:26px}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.sg.c4{grid-template-columns:repeat(4,1fr)}
+.stat{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);padding:18px}
+.stat .n{font-family:var(--fd);font-weight:800;font-size:28px;letter-spacing:-.01em;line-height:1}
+.stat .l{font-size:13px;color:var(--t2);margin-top:7px;font-weight:500}
+.stat.hl{background:var(--ink);border-color:var(--ink)}
+.stat.hl .n{color:#fff}.stat.hl .l{color:#aeb8c7}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);margin-bottom:16px;overflow:hidden}
+.acard{padding:18px 20px}
+.acard-top{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.opid{font-family:var(--fm);font-size:12px;color:var(--green-d);font-weight:600}
+.badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:99px;display:inline-flex;align-items:center;gap:5px}
+.b-green{background:var(--green-bg);color:var(--green-d)}
+.b-amber{background:var(--amber-bg);color:#9a6a10}
+.b-blue{background:#E8EEFC;color:#2950c7}
+.b-red{background:var(--red-bg);color:#c0292e}
+.b-gy{background:var(--paper2);color:var(--t2)}
+.acard h3{font-family:var(--fd);font-weight:800;font-size:19px;letter-spacing:-.01em;margin:6px 0 2px}
+.acard .meta{font-size:13px;color:var(--t2)}
+.acard-grid{display:grid;grid-template-columns:1fr 280px;gap:22px;align-items:start;margin-top:14px}
+.timer-box{text-align:right}
+.timer-box .lbl{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.timer-box .tm{font-family:var(--fm);font-weight:700;font-size:26px;color:var(--amber);line-height:1.1}
+.timer-box .tm.urgent{color:var(--red)}
+.acard-actions{display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap}
+.comm-tag{margin-left:auto;font-size:13px;color:var(--t2);font-weight:600;display:flex;align-items:center;gap:6px}
+.comm-tag button{color:var(--green-d);font-weight:700}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);padding:13px 16px;border-bottom:1px solid var(--line);background:var(--paper)}
+.tbl td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .green{color:var(--green-d);font-weight:700;font-family:var(--fm)}
+.tbl .id{font-family:var(--fm);font-size:12.5px;color:var(--green-d)}
+.alert{background:var(--amber-bg);border:1px solid #f0d9a8;border-radius:var(--r2);padding:13px 16px;font-size:14px;font-weight:600;color:#9a6a10;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.ag-list{display:flex;flex-direction:column}
+.ag-item{display:grid;grid-template-columns:2fr 2fr 1fr 1fr 1.4fr;gap:14px;align-items:center;padding:15px 20px;border-bottom:1px solid var(--line)}
+.ag-item:last-child{border-bottom:none}
+.ag-item .co{font-weight:700;font-size:14.5px}
+.ag-item .sm{font-size:12px;color:var(--t3);font-family:var(--fm)}
+.amo-card{padding:20px 22px}
+.amo-card h3{font-family:var(--fd);font-weight:800;font-size:17px;color:var(--green-d);margin-bottom:14px}
+.slr{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.slr .nm{font-weight:700;font-size:14.5px}
+.slr .em{font-size:12.5px;color:var(--t3)}
+.qrbtn{margin-left:auto;padding:7px 13px;border:1px solid var(--line2);border-radius:var(--r3);font-weight:700;font-size:12px;color:var(--t2)}
+.kanban{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
+.kcol{flex:none;width:260px}
+.kcol-h{display:flex;align-items:center;gap:8px;margin-bottom:10px;font-weight:700;font-size:13.5px}
+.kcount{background:var(--paper2);color:var(--t2);font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.kcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r2);padding:13px;margin-bottom:10px;box-shadow:var(--sh);cursor:pointer}
+.kcard .opid{font-size:11px}
+.kcard h4{font-family:var(--fd);font-weight:700;font-size:14.5px;margin:5px 0 2px}
+.kcard .meta{font-size:12px;color:var(--t2)}
+.kcard .net{margin-top:7px;font-family:var(--fm);font-weight:700;font-size:14px;color:var(--green-d)}
+.bid-input{display:flex;gap:8px;margin-top:8px}
+.bid-input input{flex:1;padding:10px 12px;border:1px solid var(--line2);border-radius:var(--r3)}
+
+/* ---------- LOGIN ---------- */
+.auth{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.auth-l{background:var(--ink);color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:space-between}
+.auth-l .q{font-family:var(--fx);font-weight:800;font-size:30px;line-height:1.15;letter-spacing:-.02em;margin-top:30px}
+.auth-l .q em{font-style:normal;color:var(--green)}
+.auth-l .ftq{color:#8c98a8;font-size:14px}
+.auth-r{display:flex;align-items:center;justify-content:center;padding:40px}
+.auth-box{width:100%;max-width:380px}
+.auth-box h2{font-family:var(--fd);font-weight:800;font-size:24px;margin-bottom:6px}
+.auth-box>p{color:var(--t2);font-size:14.5px;margin-bottom:24px}
+.demo-panel{margin-top:24px;border-top:1px solid var(--line);padding-top:20px}
+.demo-panel .dh{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--t3);margin-bottom:12px}
+.demo-btn{display:flex;align-items:center;gap:11px;width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r3);margin-bottom:8px;text-align:left;transition:.12s;background:#fff}
+.demo-btn:hover{border-color:var(--green);background:var(--green-bg)}
+.demo-btn .rl{font-weight:700;font-size:13.5px}
+.demo-btn .em{font-size:12px;color:var(--t3);font-family:var(--fm)}
+.demo-btn .go{margin-left:auto;font-weight:700;font-size:12px;color:var(--green-d)}
+
+/* ---------- MODAL ---------- */
+.ov{display:none;position:fixed;inset:0;z-index:100;background:rgba(14,26,43,.5);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px}
+.ov.on{display:flex}
+.modal{background:#fff;border-radius:var(--r);max-width:540px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--sh2)}
+.modal-h{display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff}
+.modal-h h3{font-family:var(--fd);font-weight:800;font-size:19px}
+.modal-h .x{margin-left:auto;width:32px;height:32px;border-radius:8px;color:var(--t2);font-size:18px;display:flex;align-items:center;justify-content:center}
+.modal-h .x:hover{background:var(--paper2)}
+.modal-b{padding:24px}
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;margin-bottom:18px}
+.di{background:#fff;padding:11px 14px}
+.di .k{font-size:11px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.di .v{font-weight:700;font-size:14.5px;margin-top:2px}
+.big-net{background:var(--green-bg);border:1px solid #bce7d8;border-radius:var(--r2);padding:20px;text-align:center;margin:18px 0}
+.big-net .l{font-size:13px;color:var(--green-d);font-weight:600}
+.big-net .n{font-family:var(--fd);font-weight:900;font-size:38px;color:var(--green-d);letter-spacing:-.01em;line-height:1.1;margin-top:4px}
+.msg-prev{background:var(--paper);border:1px dashed var(--line2);border-radius:var(--r2);padding:14px;font-size:13.5px;color:var(--t2);line-height:1.5;margin:14px 0}
+
+/* ---------- TOAST ---------- */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:var(--r2);font-weight:600;font-size:14px;box-shadow:var(--sh2);opacity:0;pointer-events:none;transition:.25s;z-index:200;max-width:90vw}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  h1.hero-h{font-size:42px}
+  .steps{grid-template-columns:1fr 1fr}
+  .spine{grid-template-columns:1fr;padding:32px 26px}
+  .fgrid,.cond-grid{grid-template-columns:1fr}
+  .sg,.sg.c4{grid-template-columns:1fr 1fr}
+  .acard-grid{grid-template-columns:1fr}
+  .auth{grid-template-columns:1fr}.auth-l{display:none}
+  .side{display:none}
+  .ag-item{grid-template-columns:1fr 1fr;gap:8px}
+  .dgrid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 16px}
+  h1.hero-h{font-size:34px}
+  .hero{padding:34px 0 20px}
+  .steps{grid-template-columns:1fr}
+  .nav-r .link{display:none}
+  .main-in{padding:20px 16px}
+  .sg,.sg.c4{grid-template-columns:1fr 1fr}
+  h2.sec-h{font-size:26px}
+  .hdr-in{gap:10px;padding:12px 16px}
+  .nav-r .link,.nav-r .btn{display:none}
+  .toggle{margin-left:auto!important}
+  .toggle button{padding:7px 13px;font-size:13px}
+  .logo{font-size:20px}
+}
+</style>
+</head>
+<body class="t-seller">
+
+<!-- ============ ACCESS GATE ============ -->
+<div id="gate" style="position:fixed;inset:0;z-index:999;background:#0E1A2B;display:flex;align-items:center;justify-content:center;font-family:'Hanken Grotesk',sans-serif;padding:24px">
+  <div style="max-width:368px;width:100%;text-align:center;color:#fff">
+    <div style="font-family:'Archivo Expanded','Archivo',sans-serif;font-weight:900;font-size:32px;letter-spacing:-.02em;display:inline-flex;align-items:flex-end;gap:1px">OVINT<span style="width:7px;height:7px;border-radius:50%;background:#0BA678;margin:0 1px 7px"></span>O</div>
+    <p style="color:#aeb8c7;margin:12px 0 24px;font-size:15px;line-height:1.5">Demostración privada.<br>Ingresa el código de acceso para continuar.</p>
+    <input id="gate-pw" type="password" placeholder="Código de acceso" autocomplete="off" style="width:100%;padding:13px 15px;border-radius:9px;border:1px solid #2a3a4f;background:#1d2d42;color:#fff;font-size:16px;text-align:center;outline:none" onkeydown="if(event.key==='Enter')gateCheck()">
+    <div id="gate-err" style="color:#ff6b6f;font-size:13px;height:18px;margin-top:9px"></div>
+    <button onclick="gateCheck()" style="width:100%;padding:13px;border-radius:9px;background:#0BA678;color:#fff;font-weight:700;font-size:15px;border:none;cursor:pointer;margin-top:4px">Entrar →</button>
+  </div>
+</div>
+<script>
+function gateCheck(){var v=(document.getElementById('gate-pw').value||'').trim().toLowerCase();
+  if(v==='ovinto-849'){try{sessionStorage.setItem('ov_ok','1')}catch(e){}document.getElementById('gate').style.display='none';}
+  else{document.getElementById('gate-err').textContent='Código incorrecto. Intenta de nuevo.';}}
+try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').style.display='none';}catch(e){}
+</script>
+
+<!-- ============ LANDING ============ -->
+<div id="v-land" class="view ac">
+  <header class="hdr">
+    <div class="hdr-in">
+      <div class="logo">OVINT<span class="dot"></span>O</div>
+      <div class="toggle" style="margin-left:28px">
+        <button id="tg-s" class="on" onclick="setTrack('seller')">Soy vendedor</button>
+        <button id="tg-a" onclick="setTrack('agency')">Soy agencia</button>
+      </div>
+      <div class="nav-r">
+        <a class="link" href="#como">Cómo funciona</a>
+        <button class="link" onclick="go('v-login')">Iniciar sesión</button>
+        <button class="btn btn-ink btn-sm sel-only" onclick="go('v-form')">Publicar mi auto</button>
+        <button class="btn btn-ink btn-sm agc-only" onclick="go('v-login')">Acceder</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <!-- seller -->
+        <div class="sel-only">
+          <div class="eyebrow"><span class="pulse"></span>Subasta cerrada de 24 horas</div>
+          <h1 class="hero-h">Vende tu auto al <em>mejor precio</em> del mercado.</h1>
+          <p class="hero-sub">Publica tu auto y deja que las agencias verificadas compitan por él en una subasta cerrada. Tú recibes la oferta más alta. Sin costo, sin negociar, sin extraños en tu casa.</p>
+          <div class="hero-cta">
+            <button class="btn btn-g btn-lg" onclick="go('v-form')">Publicar mi auto gratis →</button>
+            <a class="btn btn-gh btn-lg" href="#como">Ver cómo funciona</a>
+          </div>
+          <div class="trust">
+            <span>✓ Oferta en 24 horas</span>
+            <span>✓ Agencias verificadas</span>
+            <span>✓ Sin costo para ti</span>
+            <span>✓ 100% online</span>
+          </div>
+          <p class="comm-note">Las agencias pagan una pequeña comisión a OVINTO solo si tú aceptas. Tú nunca pagas. Y como ofertan a sobre cerrado, igual compiten por darte el mejor precio.</p>
+        </div>
+        <!-- agency -->
+        <div class="agc-only">
+          <div class="eyebrow amb"><span class="pulse"></span>Inventario verificado, primero</div>
+          <h1 class="hero-h">Accede a autos verificados <em style="color:var(--amber)">antes</em> que tu competencia.</h1>
+          <p class="hero-sub">Cada día, vendedores particulares publican sus autos en OVINTO. Tú ofertas a sobre cerrado, ganas con tu número real y pagas solo cuando cierras. Sin suscripción, sin guerra de precios.</p>
+          <div class="hero-cta">
+            <button class="btn btn-ink btn-lg" onclick="go('v-login')">Quiero recibir autos →</button>
+            <a class="btn btn-gh btn-lg" href="#como">Cómo funciona</a>
+          </div>
+          <div class="trust">
+            <span>✓ Inventario diario</span>
+            <span>✓ Oferta a sobre cerrado</span>
+            <span>✓ Pagas solo al cerrar</span>
+            <span>✓ Comisión 2%</span>
+          </div>
+          <p class="comm-note">Validamos cada agencia una sola vez antes de que pueda ofertar. Si no ganas el auto, no pagas nada.</p>
+        </div>
+      </div>
+      <!-- LIVE AUCTION SIGNATURE WIDGET -->
+      <div class="live-card" id="liveWidget"></div>
+    </div>
+  </section>
+
+  <!-- SPINE -->
+  <section class="sec"><div class="wrap">
+    <div class="spine">
+      <div class="spine-l">
+        <h2>Una sola mecánica. El mejor precio para los dos lados.</h2>
+        <p>La subasta cerrada de 24 horas. El vendedor publica. Las agencias verificadas compiten a sobre cerrado. Nadie ve la oferta del otro, así que cada una ofrece su mejor precio. Gana la oferta más alta.</p>
+      </div>
+      <div class="spine-r">
+        <div class="spine-face">
+          <div class="who"><span>▲</span> Para el vendedor</div>
+          <p>Como nadie ve las otras ofertas, cada agencia tiene que poner su mejor número de entrada. Sin acuerdos por debajo, sin anclarte hacia abajo. Te llevas el precio más alto.</p>
+        </div>
+        <div class="spine-face ag">
+          <div class="who"><span>▲</span> Para la agencia</div>
+          <p>Como nadie ve tu oferta, no hay guerra de precios. Ganas con tu margen real, no rematando contra otra agencia. Compites por encaje, no por bravata.</p>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- BULLETS -->
+  <section class="sec" style="padding-top:10px"><div class="wrap">
+    <div class="sec-head sel-only">
+      <div class="eyebrow"><span class="pulse"></span>Para quien vende</div>
+      <h2 class="sec-h">Tú no haces nada. El mercado compite por ti.</h2>
+    </div>
+    <div class="sec-head agc-only">
+      <div class="eyebrow amb"><span class="pulse"></span>Para quien compra</div>
+      <h2 class="sec-h">Un pipeline privado de autos verificados.</h2>
+    </div>
+    <!-- seller bullets -->
+    <div class="bullets sel-only">
+      <div class="blt"><div class="blt-ic">🏁</div><div><h4>El mercado compite por ti.</h4><p>Varias agencias verificadas ofertan por tu auto al mismo tiempo. Tú no persigues a nadie.</p></div></div>
+      <div class="blt"><div class="blt-ic">🔒</div><div><h4>Oferta cerrada, mejor precio.</h4><p>Como ninguna agencia ve la oferta de la otra, cada una pone su mejor número de entrada.</p></div></div>
+      <div class="blt"><div class="blt-ic">⏱</div><div><h4>Una oferta real en 24 horas.</h4><p>No es una estimación. Es un precio firme sobre la mesa.</p></div></div>
+      <div class="blt"><div class="blt-ic">🆓</div><div><h4>Cero costo para ti.</h4><p>Publicar es gratis y vender también. Tú nunca pagas comisiones.</p></div></div>
+      <div class="blt"><div class="blt-ic">✋</div><div><h4>Tú decides.</h4><p>Recibes la oferta más alta y eliges si la aceptas. Sin compromiso.</p></div></div>
+    </div>
+    <!-- agency bullets -->
+    <div class="bullets agc-only ag-track">
+      <div class="blt"><div class="blt-ic">📦</div><div><h4>Inventario verificado, primero.</h4><p>Recibes autos de particulares antes de que lleguen al mercado abierto.</p></div></div>
+      <div class="blt"><div class="blt-ic">🔒</div><div><h4>Oferta cerrada, sin guerra de precios.</h4><p>Nadie ve tu oferta. Ganas con tu margen real, no rematando el precio contra otra agencia.</p></div></div>
+      <div class="blt"><div class="blt-ic">💳</div><div><h4>Pagas solo cuando cierras.</h4><p>Sin suscripción ni costos fijos. Una comisión de 2% únicamente cuando el vendedor acepta tu oferta.</p></div></div>
+      <div class="blt"><div class="blt-ic">🛡</div><div><h4>Cero riesgo.</h4><p>Si no ganas el auto, no pagas nada. Ofertas con total tranquilidad.</p></div></div>
+      <div class="blt"><div class="blt-ic">🔄</div><div><h4>Flujo constante.</h4><p>Autos nuevos publicados cada día, listos para tu pipeline de compra.</p></div></div>
+    </div>
+  </div></section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="sec" id="como" style="background:var(--paper2)"><div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Cómo funciona</h2>
+      <p class="sel-only">De la publicación a la mejor oferta, en 24 horas.</p>
+      <p class="agc-only">De la verificación a tu próximo auto, sin fricción.</p>
+    </div>
+    <div class="steps sel-only">
+      <div class="step"><div class="step-n">1</div><h4>Publica tu auto</h4><p>Subes los datos y las fotos en minutos. Gratis.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Las agencias compiten</h4><p>Durante 24 horas, las agencias verificadas ofertan a sobre cerrado por tu auto.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Recibes la oferta más alta</h4><p>Al cerrar la subasta, te mostramos el mejor precio que el mercado puso por tu auto.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Tú decides</h4><p>Aceptas y coordinamos la entrega, o no. Sin costo en ningún caso.</p></div>
+    </div>
+    <div class="steps agc-only">
+      <div class="step"><div class="step-n">1</div><h4>Verifica tu agencia</h4><p>Validamos tu agencia una sola vez para que puedas ofertar. Sin costo.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Recibe autos verificados</h4><p>Cada día ves los autos publicados por particulares, con sus datos y fotos.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Oferta a sobre cerrado</h4><p>Pones tu mejor precio en 24 horas. Nadie más ve tu oferta.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Cierras y pagas el 2%</h4><p>Si el vendedor acepta, coordinamos la entrega y pagas la comisión solo ahí.</p></div>
+    </div>
+  </div></section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band"><div class="wrap">
+    <div class="sel-only">
+      <h2>Tu auto vale más de lo que crees.</h2>
+      <p>Publica gratis y deja que el mercado lo demuestre.</p>
+      <button class="btn btn-g btn-lg" onclick="go('v-form')">Publicar mi auto gratis →</button>
+    </div>
+    <div class="agc-only">
+      <h2>Tu próximo auto ya está publicado.</h2>
+      <p>Verifica tu agencia y empieza a ofertar esta semana.</p>
+      <button class="btn btn-ink btn-lg" onclick="go('v-login')">Quiero recibir autos →</button>
+    </div>
+  </div></section>
+
+  <footer class="ftr"><div class="wrap ftr-in">
+    <div class="logo" style="font-size:18px">OVINT<span class="dot" style="width:5px;height:5px;margin-bottom:4px"></span>O</div>
+    <small>© 2026 OVINTO SpA · Santiago, Chile</small>
+    <div class="ftr-links">
+      <a href="#">Términos</a><a href="#">Privacidad</a><a href="#">Contacto</a>
+    </div>
+  </div></footer>
+</div>
+
+<!-- ============ SELLER FORM ============ -->
+<div id="v-form" class="view">
+  <header class="hdr"><div class="hdr-in">
+    <div class="logo">OVINT<span class="dot"></span>O</div>
+    <button class="link nav-r" onclick="go('v-land')">← Volver</button>
+  </div></header>
+  <div class="form-wrap">
+    <div class="fcard">
+      <div class="prog"><i id="prog"></i></div>
+      <div class="dots" id="dots"></div>
+
+      <div class="fstep ac" data-step="1">
+        <div class="feyebrow">Paso 1 · Tus datos</div>
+        <div class="fgrid">
+          <div class="fld"><label>Nombre</label><input placeholder="Tu nombre"></div>
+          <div class="fld"><label>Apellido</label><input placeholder="Tu apellido"></div>
+          <div class="fld"><label>Teléfono</label><input placeholder="+56 9 0000 0000"></div>
+          <div class="fld"><label>Correo electrónico</label><input placeholder="tucorreo@mail.com"></div>
+        </div>
+      </div>
+
+      <div class="fstep" data-step="2">
+        <div class="feyebrow">Paso 2 · Tu auto</div>
+        <div class="fgrid">
+          <div class="fld"><label>Marca</label><input placeholder="Ej: Toyota, Hyundai, Kia..."></div>
+          <div class="fld"><label>Modelo</label><input placeholder="Ej: Corolla, Tucson, Cerato..."></div>
+          <div class="fld"><label>Año</label><input type="number" placeholder="2019"></div>
+          <div class="fld"><label>Kilometraje</label><input type="number" placeholder="62000"></div>
+          <div class="fld"><label>Color</label><input placeholder="Blanco"></div>
+          <div class="fld"><label>Transmisión</label><select><option>Automática</option><option>Mecánica</option><option>CVT</option></select></div>
+          <div class="fld"><label>Combustible</label><select><option>Bencina</option><option>Diésel</option><option>Híbrido</option><option>Eléctrico</option></select></div>
+          <div class="fld"><label>Patente <span style="color:var(--t3);font-weight:500">(solo uso interno)</span></label><input placeholder="BBPK12"></div>
+        </div>
+      </div>
+
+      <div class="fstep" data-step="3">
+        <div class="feyebrow">Paso 3 · Estado del vehículo</div>
+        <div class="cond-grid">
+          <div class="cond-card" onclick="pickCond(this,'A')"><div class="ch"><span class="cond cA">A</span><h4>Excelente estado</h4></div><p>Sin rayones ni detalles mecánicos. Mantenciones al día. Listo para uso inmediato.</p></div>
+          <div class="cond-card" onclick="pickCond(this,'B')"><div class="ch"><span class="cond cB">B</span><h4>Buen estado</h4></div><p>Desgaste normal por uso. Micro-detalles estéticos menores. Mecánicamente bien.</p></div>
+          <div class="cond-card" onclick="pickCond(this,'C')"><div class="ch"><span class="cond cC">C</span><h4>Estado regular</h4></div><p>Funcional pero requiere atención. Daños estéticos visibles. Necesita algo de inversión.</p></div>
+          <div class="cond-card" onclick="pickCond(this,'D')"><div class="ch"><span class="cond cD">D</span><h4>Estado deteriorado</h4></div><p>Daños significativos o fallas mecánicas que requieren reparación antes de circular.</p></div>
+        </div>
+      </div>
+
+      <div class="fstep" data-step="4">
+        <div class="feyebrow">Paso 4 · Documentación</div>
+        <div class="toggle-row"><span>Service al día</span><div class="yn"><button class="y" onclick="ynPick(this)">Sí</button><button class="n" onclick="ynPick(this)">No</button></div></div>
+        <div class="toggle-row"><span>Revisión técnica vigente</span><div class="yn"><button class="y" onclick="ynPick(this)">Sí</button><button class="n" onclick="ynPick(this)">No</button></div></div>
+        <div class="toggle-row"><span>Permiso de circulación vigente</span><div class="yn"><button class="y" onclick="ynPick(this)">Sí</button><button class="n" onclick="ynPick(this)">No</button></div></div>
+      </div>
+
+      <div class="fstep" data-step="5">
+        <div class="feyebrow">Paso 5 · Fotos</div>
+        <div style="border:2px dashed var(--line2);border-radius:var(--r2);padding:34px;text-align:center;color:var(--t2)">
+          <div style="font-size:32px;margin-bottom:8px">📷</div>
+          <p style="font-weight:600">Arrastra tus fotos aquí o haz clic para subir</p>
+          <p style="font-size:13px;color:var(--t3);margin-top:6px">Hasta 10 fotos · La patente se oculta automáticamente</p>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--green-d);font-weight:600">✓ Patente oculta automáticamente en cada foto</div>
+      </div>
+
+      <div class="fstep" data-step="6">
+        <div class="feyebrow">Paso 6 · Publicar</div>
+        <div class="fld full"><label>Descripción adicional (opcional)</label><textarea rows="3" placeholder="Agrega información extra sobre tu vehículo..."></textarea></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;margin-top:8px">
+          <input type="checkbox" id="terms" style="margin-top:4px;width:auto">
+          <label for="terms" style="font-size:14px;color:var(--t2)">Acepto los <a href="#" style="color:var(--green-d);font-weight:600">Términos de uso</a> y la <a href="#" style="color:var(--green-d);font-weight:600">Política de privacidad</a>.</label>
+        </div>
+      </div>
+
+      <div class="fnav">
+        <button class="btn btn-gh" id="fprev" onclick="formStep(-1)" style="display:none">← Anterior</button>
+        <button class="btn btn-g ml" id="fnext" onclick="formStep(1)">Continuar →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SUCCESS ============ -->
+<div id="v-suc" class="view">
+  <header class="hdr"><div class="hdr-in"><div class="logo">OVINT<span class="dot"></span>O</div></div></header>
+  <div class="form-wrap" style="text-align:center;padding-top:70px">
+    <div style="width:76px;height:76px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 22px">🎉</div>
+    <h1 style="font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.02em">¡Tu auto está publicado!</h1>
+    <p style="color:var(--t2);font-size:17px;margin:14px auto 6px;max-width:480px">Las agencias ya recibieron la notificación. Recibirás la mejor oferta en las próximas 24 horas por correo y WhatsApp.</p>
+    <p class="mono" style="color:var(--green-d);font-weight:700;margin-bottom:28px">OV-2026-00848</p>
+    <button class="btn btn-g btn-lg" onclick="go('v-land')">Volver al inicio</button>
+  </div>
+</div>
+
+<!-- ============ LOGIN ============ -->
+<div id="v-login" class="view">
+  <div class="auth">
+    <div class="auth-l">
+      <div class="logo" style="color:#fff">OVINT<span class="dot"></span>O</div>
+      <div class="q">El mercado compite.<br><em>El mejor precio gana.</em></div>
+      <div class="ftq">Plataforma B2B de subastas de autos usados · Chile</div>
+    </div>
+    <div class="auth-r">
+      <div class="auth-box">
+        <h2>Iniciar sesión</h2>
+        <p>Accede a tu panel de OVINTO.</p>
+        <div class="fld"><label>Correo electrónico</label><input id="l-em" placeholder="tu@empresa.cl"></div>
+        <div class="fld"><label>Contraseña</label><input id="l-pw" type="password" placeholder="••••••••"></div>
+        <button class="btn btn-ink" style="width:100%;justify-content:center;margin-top:6px" onclick="doLogin()">Iniciar sesión</button>
+        <div class="demo-panel">
+          <div class="dh">Acceso demo · un clic</div>
+          <button class="demo-btn" onclick="quick('admin')"><div><div class="rl">Admin OVINTO</div><div class="em">admin@ovinto.cl</div></div><span class="go">Entrar →</span></button>
+          <button class="demo-btn" onclick="quick('ag')"><div><div class="rl">Agencia compradora</div><div class="em">agencia@ovinto.cl</div></div><span class="go">Entrar →</span></button>
+          <button class="demo-btn" onclick="quick('mgr')"><div><div class="rl">Manager automotora</div><div class="em">manager@ovinto.cl</div></div><span class="go">Entrar →</span></button>
+          <button class="demo-btn" onclick="quick('slr')"><div><div class="rl">Vendedor</div><div class="em">vendedor@ovinto.cl</div></div><span class="go">Entrar →</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="v-dash" class="dash">
+  <aside class="side">
+    <div class="side-top"><div class="logo">OVINT<span class="dot"></span>O</div></div>
+    <nav id="nav"></nav>
+    <div class="side-user">
+      <div class="avatar" id="u-ini">OV</div>
+      <div><div class="nm" id="u-nm">Equipo OVINTO</div><div class="rl" id="u-rl">Admin</div></div>
+      <button class="qrbtn" style="margin-left:auto" onclick="go('v-land')">Salir</button>
+    </div>
+  </aside>
+  <main class="main"><div class="main-in" id="mc"></div></main>
+</div>
+
+<!-- MODAL + TOAST -->
+<div class="ov" id="ov"><div class="modal"><div class="modal-h"><h3 id="ov-t">Detalle</h3><button class="x" onclick="closeOv()">✕</button></div><div class="modal-b" id="ov-b"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ---------- DEMO DATA ----------
+const fmt = n => '$'+Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+const fmtKm = k => k.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' km';
+const NOW = Date.now();
+const AGENCIES = [
+  {id:'AGC-001',name:'AutoPrime Santiago',rut:'76.123.456-7',resp:'Carlos Ríos',email:'carlos@autoprime.cl',status:'active',commPct:2},
+  {id:'AGC-002',name:'Motormundo SpA',rut:'76.234.567-8',resp:'Valentina Pérez',email:'v.perez@motormundo.cl',status:'active',commPct:2},
+  {id:'AGC-003',name:'CarMax Chile',rut:'76.345.678-9',resp:'Rodrigo Mora',email:'compras@carmax.cl',status:'active',commPct:1.5},
+  {id:'AGC-004',name:'AutoGlobal Ltda.',rut:'76.456.789-0',resp:'Fernanda Gil',email:'f.gil@autoglobal.cl',status:'blocked',commPct:2},
+  {id:'AGC-005',name:'MegaAutos SpA',rut:'76.567.890-1',resp:'Marco Torres',email:'ventas@megaautos.cl',status:'pending',commPct:2},
+];
+const agName = id => (AGENCIES.find(a=>a.id===id)||{}).name||'';
+const CARS = [
+  {id:'OV-2026-00847',status:'auction',ae:NOW+5*3600e3+25*60e3,body:'sedan',cl:{n:'Juan',a:'García',t:'+56 9 1234 5678',e:'juan@gmail.com'},v:{marc:'Toyota',mod:'Corolla',yr:2019,km:62000,color:'Blanco',cond:'A'},bids:[{agId:'AGC-001',amt:10150000},{agId:'AGC-003',amt:9800000},{agId:'AGC-002',amt:9200000}]},
+  {id:'OV-2026-00846',status:'auction',ae:NOW+1*3600e3+10*60e3,body:'suv',cl:{n:'María',a:'Rodríguez',t:'+56 9 2222 3333',e:'maria@gmail.com'},v:{marc:'Hyundai',mod:'Tucson',yr:2020,km:38000,color:'Negro',cond:'A'},bids:[{agId:'AGC-002',amt:14800000},{agId:'AGC-001',amt:14200000}]},
+  {id:'OV-2026-00849',status:'auction',ae:NOW+3*3600e3+40*60e3,body:'hatch',cl:{n:'Camila',a:'Soto',t:'+56 9 4444 5555',e:'camila@gmail.com'},v:{marc:'Suzuki',mod:'Swift',yr:2018,km:71000,color:'Rojo',cond:'B'},bids:[{agId:'AGC-003',amt:7600000}]},
+  {id:'OV-2026-00845',status:'offered',ae:NOW-3600e3,body:'sedan',cl:{n:'Sofía',a:'Muñoz',t:'+56 9 6666 7777',e:'sofia@gmail.com'},v:{marc:'Kia',mod:'Cerato',yr:2021,km:29000,color:'Gris',cond:'A'},bids:[{agId:'AGC-001',amt:12500000}],winner:{agId:'AGC-001',amt:12500000,commPct:2}},
+  {id:'OV-2026-00844',status:'accepted',ae:NOW-86400e3,body:'suv',cl:{n:'Diego',a:'Castro',t:'+56 9 8888 9999',e:'diego@gmail.com'},v:{marc:'Mazda',mod:'CX-5',yr:2022,km:24000,color:'Azul',cond:'A'},bids:[{agId:'AGC-003',amt:18500000}],winner:{agId:'AGC-003',amt:18500000,commPct:1.5},clientAccepted:true,commPaid:true},
+  {id:'OV-2026-00843',status:'no_offers',ae:NOW-172800e3,body:'hatch',cl:{n:'Patricia',a:'Vega',t:'+56 9 1010 2020',e:'patricia@gmail.com'},v:{marc:'Ford',mod:'Fiesta',yr:2015,km:118000,color:'Plata',cond:'C'},bids:[]},
+];
+const SLB={auction:'b-green',offered:'b-amber',accepted:'b-green',rejected:'b-red',no_offers:'b-gy',cancelled:'b-gy'};
+const SLT={auction:'En subasta',offered:'Esperando al cliente',accepted:'Oferta aceptada',rejected:'Rechazada',no_offers:'Sin ofertas',cancelled:'Cancelada'};
+const net = (amt,pct)=>Math.round(amt*(1-pct/100));
+const bestBid = c => c.bids.length?[...c.bids].sort((a,b)=>b.amt-a.amt)[0]:null;
+
+// car SVG illustrations by body type
+function carSVG(body,color){
+  const paint={Blanco:'#e9e9ec',Negro:'#2a2d33',Rojo:'#d3454b',Gris:'#9aa0aa',Azul:'#3f6bc4',Plata:'#c2c6cd',Verde:'#3f9e6e'}[color]||'#6b7585';
+  const g='<stop offset="0" stop-color="'+paint+'"/><stop offset="1" stop-color="'+shade(paint,-22)+'"/>';
+  if(body==='suv')return svgWrap('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">'+g+'</linearGradient></defs><path d="M14 44h72l-6-15-9-3-7-7H42l-6 8-22 4z" fill="url(#cg)"/><rect x="40" y="20" width="26" height="11" rx="3" fill="#cfe0ee" opacity=".85"/><circle cx="30" cy="46" r="7" fill="#1a1c20"/><circle cx="74" cy="46" r="7" fill="#1a1c20"/><circle cx="30" cy="46" r="3" fill="#5a6068"/><circle cx="74" cy="46" r="3" fill="#5a6068"/>');
+  if(body==='hatch')return svgWrap('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">'+g+'</linearGradient></defs><path d="M16 45h68l-4-13-8-5-6-6H44l-9 9-19 3z" fill="url(#cg)"/><rect x="42" y="23" width="22" height="10" rx="3" fill="#cfe0ee" opacity=".85"/><circle cx="32" cy="47" r="6.5" fill="#1a1c20"/><circle cx="72" cy="47" r="6.5" fill="#1a1c20"/><circle cx="32" cy="47" r="2.8" fill="#5a6068"/><circle cx="72" cy="47" r="2.8" fill="#5a6068"/>');
+  return svgWrap('<defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">'+g+'</linearGradient></defs><path d="M12 46h76l-7-13-13-4-8-6H40l-7 9-21 4z" fill="url(#cg)"/><rect x="40" y="25" width="28" height="9" rx="3" fill="#cfe0ee" opacity=".85"/><circle cx="31" cy="47" r="6.5" fill="#1a1c20"/><circle cx="73" cy="47" r="6.5" fill="#1a1c20"/><circle cx="31" cy="47" r="2.8" fill="#5a6068"/><circle cx="73" cy="47" r="2.8" fill="#5a6068"/>');
+}
+function svgWrap(inner){return '<svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="60" fill="#f1ede4"/>'+inner+'</svg>';}
+function shade(hex,p){let n=parseInt(hex.slice(1),16),r=(n>>16)+p,g=((n>>8)&255)+p,b=(n&255)+p;r=Math.max(0,Math.min(255,r));g=Math.max(0,Math.min(255,g));b=Math.max(0,Math.min(255,b));return '#'+(0x1000000+r*0x10000+g*0x100+b).toString(16).slice(1);}
+
+// ---------- ROUTER ----------
+function go(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('ac'));document.getElementById('v-dash').classList.remove('ac');
+  if(id==='v-dash'){document.getElementById('v-dash').classList.add('ac');}else{document.getElementById(id).classList.add('ac');}
+  window.scrollTo(0,0);}
+function setTrack(t){document.body.className=t==='seller'?'t-seller':'t-agency';
+  document.getElementById('tg-s').classList.toggle('on',t==='seller');document.getElementById('tg-a').classList.toggle('on',t==='agency');}
+
+// ---------- LIVE WIDGET (signature) ----------
+let liveCar={id:'OV-2026-00846',name:'Hyundai Tucson 2020',sub:'María R. · 38.000 km · Negro · Automática',cond:'A',body:'suv',color:'Negro',ae:NOW+1*3600e3+10*60e3,
+  bids:[{ag:'Motormundo SpA',amt:14800000},{ag:'AutoPrime Santiago',amt:14200000}]};
+function renderLive(){
+  const sorted=[...liveCar.bids].sort((a,b)=>b.amt-a.amt);
+  const best=sorted[0];
+  const w=document.getElementById('liveWidget');if(!w)return;
+  w.innerHTML=`<div class="live-top"><div class="live-badge"><span class="pulse"></span>Subasta en vivo</div><div class="live-timer" id="lt">--:--:--</div></div>
+  <div class="live-car"><div class="car-thumb">${carSVG(liveCar.body,liveCar.color)}</div>
+  <div class="live-car-info"><h3>${liveCar.name}</h3><p>${liveCar.sub}</p></div>
+  <span class="cond c${liveCar.cond}" style="margin-left:auto">${liveCar.cond}</span></div>
+  <div class="bids" id="liveBids">${sorted.map((b,i)=>`<div class="bid-row"><div class="bid-rank ${i===0?'gold':''}">${i+1}</div><div class="bid-ag">${b.ag}</div><div class="bid-amt ${i===0?'win':''}"><div class="g">${fmt(b.amt)}</div>${i===0?`<small>→ recibes ${fmt(net(b.amt,2))}</small>`:''}</div></div>`).join('')}</div>
+  <div class="live-foot"><span>${liveCar.bids.length} agencias compitiendo</span><span class="net">El vendedor recibe <b>${fmt(net(best.amt,2))}</b></span></div>`;
+}
+// simulate incoming bids
+const SIM_AGENCIES=['CarMax Chile','AutoGlobal Ltda.','Premier Motors','AutoMundo'];
+function simBid(){
+  const best=Math.max(...liveCar.bids.map(b=>b.amt));
+  const bump=best+(Math.floor(Math.random()*5)+2)*100000;
+  let ag=SIM_AGENCIES[Math.floor(Math.random()*SIM_AGENCIES.length)];
+  const ex=liveCar.bids.find(b=>b.ag===ag);
+  if(ex)ex.amt=bump;else liveCar.bids.push({ag,amt:bump});
+  if(liveCar.bids.length>4)liveCar.bids.shift();
+  renderLive();
+  const first=document.querySelector('#liveBids .bid-row');if(first)first.classList.add('flash');
+}
+function tickLive(){
+  const el=document.getElementById('lt');if(!el)return;
+  let rem=liveCar.ae-Date.now();if(rem<0)rem=0;
+  const h=Math.floor(rem/3600e3),m=Math.floor(rem%3600e3/60e3),s=Math.floor(rem%60e3/1e3);
+  el.textContent=[h,m,s].map(n=>String(n).padStart(2,'0')).join(':');
+}
+
+// ---------- FORM ----------
+let fstep=1;const FSTEPS=['Cliente','Auto','Estado','Docs','Fotos','Publicar'];
+function buildDots(){document.getElementById('dots').innerHTML=FSTEPS.map((s,i)=>`<div class="dot-s ${i+1===fstep?'on':''} ${i+1<fstep?'done':''}"><div class="dot-c">${i+1<fstep?'✓':i+1}</div><span>${s}</span></div>`).join('');
+  document.getElementById('prog').style.width=(fstep/6*100)+'%';}
+function showFstep(){document.querySelectorAll('.fstep').forEach(s=>s.classList.toggle('ac',+s.dataset.step===fstep));
+  document.getElementById('fprev').style.display=fstep>1?'inline-flex':'none';
+  document.getElementById('fnext').textContent=fstep===6?'Publicar mi auto →':'Continuar →';buildDots();}
+function formStep(d){if(fstep===6&&d===1){go('v-suc');fstep=1;showFstep();return;}fstep=Math.max(1,Math.min(6,fstep+d));showFstep();window.scrollTo(0,0);}
+function pickCond(el){document.querySelectorAll('.cond-card').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');}
+function ynPick(el){el.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
+
+// ---------- AUTH ----------
+const USERS={admin:{ini:'OV',nm:'Equipo OVINTO',rl:'Admin OVINTO',role:'admin'},ag:{ini:'AP',nm:'AutoPrime Santiago',rl:'Agencia',role:'ag',agId:'AGC-001'},mgr:{ini:'CP',nm:'Carlos Pérez',rl:'Manager',role:'mgr'},slr:{ini:'AL',nm:'Andrea López',rl:'Vendedor',role:'slr'}};
+let cu=null;
+function quick(r){cu=USERS[r];enterDash();}
+function doLogin(){cu=USERS.admin;enterDash();}
+function enterDash(){document.getElementById('u-ini').textContent=cu.ini;document.getElementById('u-nm').textContent=cu.nm;document.getElementById('u-rl').textContent=cu.rl;buildNav();go('v-dash');}
+
+const NAVS={
+  admin:[['Resumen','resumen','▦'],['Subastas activas','live','⚡'],['Historial','hist','▤'],['Comisiones','comm','✓'],['Agencias','ags','▢'],['Automotoras','autos','◇']],
+  ag:[['Autos disponibles','aglive','⚡'],['Mis ofertas','agmine','▤']],
+  mgr:[['Operaciones','mops','▦'],['Vendedores','mslr','◇']],
+  slr:[['Mis clientes','skan','▦'],['Mi QR','sqr','◇']]
+};
+let curPg='';
+function buildNav(){const n=NAVS[cu.role];const g=document.getElementById('nav');
+  g.innerHTML=`<div class="side-grp">${cu.role==='admin'?'Operaciones':'Panel'}</div>`+n.map((it,i)=>`<button class="ni ${i===0?'on':''}" onclick="nav('${it[1]}')"><span style="opacity:.6">${it[2]}</span> ${it[0]}${it[1]==='ags'&&cu.role==='admin'?'<span class="nbadge">1</span>':''}</button>`).join('');
+  nav(n[0][1]);}
+function nav(pg){curPg=pg;document.querySelectorAll('#nav .ni').forEach((el,i)=>el.classList.toggle('on',NAVS[cu.role][i][1]===pg));
+  document.getElementById('mc').innerHTML=(RENDER[pg]||(()=>'<p>—</p>'))();}
+
+// ---------- DASHBOARD RENDERS ----------
+function stat(n,l,hl){return `<div class="stat ${hl?'hl':''}"><div class="n">${n}</div><div class="l">${l}</div></div>`;}
+function rankRows(c,showNet){const s=[...c.bids].sort((a,b)=>b.amt-a.amt).slice(0,3);
+  return s.map((b,i)=>`<div class="bid-row"><div class="bid-rank ${i===0?'gold':''}">${i+1}</div><div class="bid-ag">${agName(b.agId)}</div><div class="bid-amt ${i===0?'win':''}"><div class="g">${fmt(b.amt)}</div>${i===0&&showNet?`<small>→ cliente recibe ${fmt(net(b.amt,2))}</small>`:''}</div></div>`).join('');}
+
+const RENDER={
+  resumen(){const active=CARS.filter(c=>c.status==='auction');
+    return `<div class="page-h">Resumen ejecutivo</div><div class="page-sub">Estado del negocio en tiempo real</div>
+    <div class="sg">${stat(active.length,'Subastas activas ahora',1)}${stat('1','Cierran en 2 horas')}${stat('1','Esperando al cliente')}</div>
+    <div class="sg">${stat('$277.500','Comisiones cobradas')}${stat('0','Comisiones pendientes')}${stat('1','Agencias con 2+ impagas')}</div>
+    <div class="card"><div style="padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700">Subastas cerrando pronto</div>
+    ${active.map(c=>{const b=bestBid(c);return `<div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line)"><div class="car-thumb" style="width:64px;height:46px">${carSVG(c.body,c.v.color)}</div><div><div style="font-weight:700">${c.v.marc} ${c.v.mod} ${c.v.yr}</div><div class="opid">${c.id}</div></div><div style="margin-left:auto;text-align:right"><div class="mono" style="font-weight:700;color:var(--amber)" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2)">${b?fmt(b.amt):'sin ofertas'}</div></div></div>`}).join('')}</div>`;},
+
+  live(){const active=CARS.filter(c=>c.status==='auction').sort((a,b)=>a.ae-b.ae);
+    return `<div class="page-h">Subastas activas</div><div class="page-sub">${active.length} subastas corriendo ahora</div>
+    ${active.map(c=>{const b=bestBid(c);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="badge b-green"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>En subasta</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
+    <div class="acard-grid"><div><h3>${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.cl.n} ${c.cl.a} · ${fmtKm(c.v.km)} · ${c.v.color}</div>
+    <div class="bids" style="padding:8px 0 0">${c.bids.length?rankRows(c,true):'<p style="color:var(--t3);font-size:14px;padding:8px 0">Aún sin ofertas</p>'}</div>
+    <div class="acard-actions"><button class="btn btn-gh btn-sm" onclick="carModal('${c.id}')">Ver ficha</button>${b?`<button class="btn btn-g btn-sm" onclick="sendModal('${c.id}')">Enviar mejor oferta al cliente →</button>`:''}<span class="comm-tag">Comisión: 2% <button onclick="toast('Editar comisión (demo)')">✎</button></span></div></div>
+    <div class="timer-box"><div class="lbl">Cierra en</div><div class="tm" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2);margin-top:6px">${c.bids.length} oferta(s)</div></div></div></div>`}).join('')}`;},
+
+  hist(){const rows=CARS.filter(c=>c.status!=='auction');
+    return `<div class="page-h">Historial</div><div class="page-sub">Todas las operaciones cerradas</div>
+    <div class="card"><table class="tbl"><thead><tr><th>ID</th><th>Cliente</th><th>Vehículo</th><th>Estado</th><th>Mejor oferta</th><th>Cliente recibe</th></tr></thead><tbody>
+    ${rows.map(c=>{const b=bestBid(c);return `<tr><td class="id">${c.id}</td><td>${c.cl.n} ${c.cl.a}</td><td>${c.v.marc} ${c.v.mod}</td><td><span class="badge ${SLB[c.status]}">${SLT[c.status]}</span></td><td>${b?fmt(b.amt):'—'}</td><td class="green">${b?fmt(net(b.amt,c.winner?c.winner.commPct:2)):'—'}</td></tr>`}).join('')}
+    </tbody></table></div>`;},
+
+  comm(){const paid=CARS.filter(c=>c.commPaid);
+    return `<div class="page-h">Comisiones cobradas</div><div class="page-sub">Ingresos de OVINTO por deal cerrado</div>
+    <div class="sg c4">${stat(paid.length,'Transacciones')}${stat('$18.500.000','Volumen bruto')}${stat('$277.500','Comisiones OVINTO',1)}${stat('$18.222.500','Pagado a clientes')}</div>
+    <div class="card"><table class="tbl"><thead><tr><th>ID</th><th>Cliente</th><th>Agencia</th><th>Oferta bruta</th><th>%</th><th>Comisión</th><th>Cliente recibe</th><th>Estado</th></tr></thead><tbody>
+    ${paid.map(c=>{const w=c.winner;return `<tr><td class="id">${c.id}</td><td>${c.cl.n} ${c.cl.a}</td><td>${agName(w.agId)}</td><td>${fmt(w.amt)}</td><td>${w.commPct}%</td><td class="green">${fmt(w.amt*w.commPct/100)}</td><td class="green">${fmt(net(w.amt,w.commPct))}</td><td><span class="badge b-green">Pagada</span></td></tr>`}).join('')}
+    </tbody></table></div>`;},
+
+  ags(){return `<div class="page-h">Red de agencias</div><div class="page-sub">${AGENCIES.filter(a=>a.status==='active').length} agencias activas</div>
+    <div class="alert">⚠ 1 solicitud pendiente de aprobación</div>
+    <div class="card"><div class="ag-list">
+    ${AGENCIES.map(a=>{const sb={active:['b-green','Activa'],blocked:['b-red','Bloqueada'],pending:['b-amber','Pendiente']}[a.status];
+    const act=a.status==='pending'?'<button class="btn btn-g btn-sm" onclick="toast(\'Agencia aprobada\')">Aprobar</button> <button class="btn btn-gh btn-sm" onclick="toast(\'Rechazada\')">Rechazar</button>':a.status==='blocked'?'<button class="btn btn-gh btn-sm" onclick="toast(\'Desbloqueada\')">Desbloquear</button>':'<button class="btn btn-gh btn-sm" onclick="toast(\'Bloqueada\')">Bloquear</button>';
+    return `<div class="ag-item"><div><div class="co">${a.name}</div><div class="sm">${a.rut}</div></div><div><div style="font-weight:600;font-size:13.5px">${a.resp}</div><div class="sm">${a.email}</div></div><div style="font-weight:700">${a.commPct}% <button onclick="toast('Editar comisión')" style="color:var(--green-d)">✎</button></div><div><span class="badge ${sb[0]}">${sb[1]}</span></div><div>${act}</div></div>`}).join('')}
+    </div></div>`;},
+
+  autos(){const AM=[{n:'AutoMotora San Carlos',s:[['AL','Andrea López','vendedor@ovinto.cl'],['TH','Tomás Herrera','t.herrera@automotora.cl']]},{n:'Motor Plus Santiago',s:[['CR','Carlos Ruiz','c.ruiz@motorplus.cl']]},{n:'Premier Motors',s:[]}];
+    return `<div class="page-h">Automotoras</div><div class="page-sub">Sucursales y sus vendedores</div>
+    ${AM.map(a=>`<div class="card amo-card"><h3>${a.n}</h3>${a.s.length?a.s.map(s=>`<div class="slr"><div class="avatar" style="width:34px;height:34px;font-size:12px;background:var(--green)">${s[0]}</div><div><div class="nm">${s[1]}</div><div class="em">${s[2]}</div></div><button class="qrbtn" onclick="toast('QR de ${s[1]}')">QR</button></div>`).join(''):'<p style="color:var(--t3);font-size:14px">Sin vendedores registrados</p>'}</div>`).join('')}`;},
+
+  // AGENCY
+  aglive(){const active=CARS.filter(c=>c.status==='auction');
+    return `<div class="page-h">Autos disponibles</div><div class="page-sub">Ofertas a sobre cerrado · nadie ve tu número</div>
+    <div class="alert" style="background:var(--green-bg);border-color:#bce7d8;color:var(--green-d)">Ofrece tu mejor precio. Nadie ve la oferta de las otras agencias. Ganas con tu número real.</div>
+    ${active.map(c=>{const mine=c.bids.find(b=>b.agId===cu.agId);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
+    <div class="acard-grid"><div><h3>${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.v.color} · ${fmtKm(c.v.km)} · Automática · ${c.v.cond==='A'?'Excelente':'Buen'} estado</div>
+    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><span class="badge b-green">✓ Service al día</span><span class="badge b-green">✓ Revisión técnica</span><span class="badge b-green">✓ Permiso circ.</span></div>
+    ${mine?`<div style="margin-top:12px;padding:11px 14px;background:var(--green-bg);border-radius:var(--r3);font-size:14px;font-weight:600;color:var(--green-d)">Tu oferta registrada: ${fmt(mine.amt)} <button class="qrbtn" style="margin-left:8px" onclick="toast('Modificar oferta')">Modificar</button></div>`:`<div class="bid-input"><input placeholder="Tu oferta en CLP" id="bid-${c.id}"><button class="btn btn-ink" onclick="toast('Oferta enviada a sobre cerrado')">Ofertar →</button></div>`}</div>
+    <div class="timer-box"><div class="lbl">Cierra en</div><div class="tm" data-timer="${c.ae}">--:--:--</div></div></div></div>`}).join('')}`;},
+
+  agmine(){const mine=CARS.filter(c=>c.bids.some(b=>b.agId===cu.agId));
+    return `<div class="page-h">Mis ofertas</div><div class="page-sub">Estado de tus pujas</div>
+    <div class="card"><table class="tbl"><thead><tr><th>ID</th><th>Vehículo</th><th>Tu oferta</th><th>Estado</th><th></th></tr></thead><tbody>
+    ${mine.map(c=>{const b=c.bids.find(x=>x.agId===cu.agId);const won=c.winner&&c.winner.agId===cu.agId;
+    return `<tr><td class="id">${c.id}</td><td>${c.v.marc} ${c.v.mod} ${c.v.yr}</td><td>${fmt(b.amt)}</td><td><span class="badge ${SLB[c.status]}">${SLT[c.status]}</span></td><td>${won&&c.clientAccepted?(c.commPaid?'<span class="badge b-green">Comisión pagada ✓</span>':'<button class="btn btn-g btn-sm" onclick="payModal(\''+c.id+'\')">Ver datos y pagar →</button>'):''}</td></tr>`}).join('')}
+    </tbody></table></div>`;},
+
+  // MANAGER
+  mops(){return `<div class="page-h">Operaciones</div><div class="page-sub">Autos de tu automotora</div>
+    <div class="sg c4">${stat('4','Total')}${stat('2','En subasta')}${stat('1','Esperando')}${stat('1','Aceptadas')}</div>
+    <div class="card"><table class="tbl"><thead><tr><th>ID</th><th>Cliente</th><th>Vehículo</th><th>Vendedor</th><th>Estado</th><th>Cliente recibe</th></tr></thead><tbody>
+    ${CARS.slice(0,4).map(c=>{const b=bestBid(c);return `<tr><td class="id">${c.id}</td><td>${c.cl.n} ${c.cl.a}</td><td>${c.v.marc} ${c.v.mod}</td><td>Andrea López</td><td><span class="badge ${SLB[c.status]}">${SLT[c.status]}</span></td><td class="green">${b&&c.status!=='auction'?fmt(net(b.amt,2)):'—'}</td></tr>`}).join('')}
+    </tbody></table></div>`;},
+  mslr(){return `<div class="page-h">Vendedores</div><div class="page-sub">Tu equipo</div>
+    <div style="margin-bottom:16px"><button class="btn btn-g" onclick="toast('Crear vendedor (demo)')">+ Agregar vendedor</button></div>
+    <div class="card"><table class="tbl"><thead><tr><th>Vendedor</th><th>Email</th><th>Operaciones</th><th>QR</th></tr></thead><tbody>
+    <tr><td style="font-weight:600">Andrea López</td><td>vendedor@ovinto.cl</td><td>3</td><td><button class="qrbtn" onclick="toast('QR')">QR</button></td></tr>
+    <tr><td style="font-weight:600">Tomás Herrera</td><td>t.herrera@automotora.cl</td><td>1</td><td><button class="qrbtn" onclick="toast('QR')">QR</button></td></tr>
+    </tbody></table></div>`;},
+
+  // SELLER
+  skan(){const cols=[['auction','En subasta','b-green'],['offered','Esperando','b-amber'],['accepted','Aceptada','b-green'],['no_offers','Sin ofertas','b-gy']];
+    return `<div class="page-h">Mis clientes</div><div class="page-sub">Pipeline de tus operaciones</div>
+    <div class="sg c4">${stat('4','Total')}${stat('2','Activas')}${stat('1','Esperando')}${stat('1','Aceptadas')}</div>
+    <div class="kanban">${cols.map(col=>{const items=CARS.filter(c=>c.status===col[0]);return `<div class="kcol"><div class="kcol-h"><span class="badge ${col[2]}">${col[1]}</span><span class="kcount">${items.length}</span></div>
+    ${items.map(c=>{const b=bestBid(c);return `<div class="kcard" onclick="carModal('${c.id}')"><div class="opid">${c.id}</div><h4>${c.v.marc} ${c.v.mod} ${c.v.yr}</h4><div class="meta">${c.cl.n} ${c.cl.a}</div>${b&&c.status!=='auction'?`<div class="net">${fmt(net(b.amt,2))}</div>`:''}</div>`}).join('')||'<p style="color:var(--t3);font-size:13px;padding:8px">—</p>'}</div>`}).join('')}</div>`;},
+  sqr(){return `<div class="page-h">Mi QR</div><div class="page-sub">Vincula clientes a tu nombre</div>
+    <div class="card" style="padding:30px;text-align:center;max-width:360px"><div style="width:180px;height:180px;margin:0 auto 18px;background:var(--ink);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">▦ QR</div>
+    <p style="font-size:14px;color:var(--t2);margin-bottom:16px">Cuando un cliente escanea este QR, sus datos quedan vinculados a tu nombre.</p>
+    <button class="btn btn-ink" onclick="toast('QR descargado')">Descargar QR</button></div>`;}
+};
+
+// ---------- MODALS ----------
+function carModal(id){const c=CARS.find(x=>x.id===id);const isAdmin=cu&&cu.role==='admin';
+  document.getElementById('ov-t').textContent=`${c.v.marc} ${c.v.mod} ${c.v.yr}`;
+  document.getElementById('ov-b').innerHTML=`<div class="car-thumb" style="width:100%;height:150px;margin-bottom:16px">${carSVG(c.body,c.v.color)}</div>
+  <div class="dgrid"><div class="di"><div class="k">Cliente</div><div class="v">${c.cl.n} ${c.cl.a}</div></div><div class="di"><div class="k">Estado</div><div class="v"><span class="badge ${SLB[c.status]}">${SLT[c.status]}</span></div></div>
+  <div class="di"><div class="k">Kilometraje</div><div class="v">${fmtKm(c.v.km)}</div></div><div class="di"><div class="k">Color</div><div class="v">${c.v.color}</div></div>
+  <div class="di"><div class="k">Condición</div><div class="v">${c.v.cond} · ${{A:'Excelente',B:'Bueno',C:'Regular',D:'Deteriorado'}[c.v.cond]}</div></div>${isAdmin?`<div class="di"><div class="k">Patente</div><div class="v">BBPK12</div></div>`:''}</div>
+  ${c.bids.length?`<div style="font-weight:700;font-size:13px;margin-bottom:6px">Ofertas recibidas</div><div class="bids" style="padding:0">${rankRows(c,isAdmin)}</div>`:''}
+  ${isAdmin&&bestBid(c)&&c.status==='auction'?`<button class="btn btn-g" style="width:100%;justify-content:center;margin-top:16px" onclick="closeOv();sendModal('${c.id}')">Enviar oferta al cliente →</button>`:''}`;
+  openOv();}
+function sendModal(id){const c=CARS.find(x=>x.id===id);const b=bestBid(c);
+  document.getElementById('ov-t').textContent='Enviar oferta al cliente';
+  document.getElementById('ov-b').innerHTML=`<div class="dgrid"><div class="di"><div class="k">Agencia ganadora</div><div class="v">${agName(b.agId)}</div></div><div class="di"><div class="k">Oferta bruta</div><div class="v">${fmt(b.amt)}</div></div>
+  <div class="di"><div class="k">Comisión OVINTO</div><div class="v">2% <button onclick="toast('Editar %')" style="color:var(--green-d)">✎</button></div></div><div class="di"><div class="k">Vehículo</div><div class="v">${c.v.marc} ${c.v.mod}</div></div></div>
+  <div class="big-net"><div class="l">El cliente recibe</div><div class="n">${fmt(net(b.amt,2))}</div></div>
+  <div class="msg-prev">"Hola ${c.cl.n}, tenemos una oferta de ${fmt(net(b.amt,2))} por tu ${c.v.marc} ${c.v.mod}. Ingresa para aceptarla. — OVINTO"</div>
+  <button class="btn btn-g" style="width:100%;justify-content:center" onclick="closeOv();toast('Oferta enviada al cliente por correo y WhatsApp')">Enviar oferta al cliente →</button>`;
+  openOv();}
+function payModal(id){const c=CARS.find(x=>x.id===id);const w=c.winner;
+  document.getElementById('ov-t').textContent='Pagar comisión';
+  document.getElementById('ov-b').innerHTML=`<div class="dgrid"><div class="di"><div class="k">Vehículo</div><div class="v">${c.v.marc} ${c.v.mod} ${c.v.yr}</div></div><div class="di"><div class="k">Tu oferta</div><div class="v">${fmt(w.amt)}</div></div></div>
+  <div class="big-net" style="background:var(--amber-bg);border-color:#f0d9a8"><div class="l" style="color:#9a6a10">Comisión a pagar (2%)</div><div class="n" style="color:#9a6a10">${fmt(w.amt*w.commPct/100)}</div></div>
+  <button class="btn btn-g" style="width:100%;justify-content:center" onclick="closeOv();toast('Comisión pagada · datos del cliente desbloqueados')">Pagar ${fmt(w.amt*w.commPct/100)} y ver datos del cliente →</button>`;
+  openOv();}
+function openOv(){document.getElementById('ov').classList.add('on');}
+function closeOv(){document.getElementById('ov').classList.remove('on');}
+document.getElementById('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
+
+// ---------- TOAST ----------
+let tt;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2600);}
+
+// ---------- GLOBAL TICK ----------
+function tickAll(){tickLive();document.querySelectorAll('[data-timer]').forEach(el=>{let rem=+el.dataset.timer-Date.now();if(rem<0)rem=0;
+  const h=Math.floor(rem/3600e3),m=Math.floor(rem%3600e3/60e3),s=Math.floor(rem%60e3/1e3);
+  el.textContent=[h,m,s].map(n=>String(n).padStart(2,'0')).join(':');
+  if(el.classList.contains('tm'))el.classList.toggle('urgent',rem<3600e3);});}
+
+// ---------- INIT ----------
+renderLive();buildDots();showFstep();
+setInterval(tickAll,1000);tickAll();
+setInterval(simBid,4500);
+</script>
+</body>
+</html>
