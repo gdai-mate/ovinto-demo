@@ -120,8 +120,10 @@ h2.sec-h{font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.0
 .bullets{display:flex;flex-direction:column;gap:2px;max-width:640px;margin:0 auto}
 .blt{display:flex;gap:15px;padding:18px 4px;border-bottom:1px solid var(--line)}
 .blt:last-child{border-bottom:none}
-.blt-ic{width:40px;height:40px;border-radius:11px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex:none}
-.ag-track .blt-ic{background:var(--amber-bg)}
+.blt-ic{width:40px;height:40px;border-radius:11px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex:none;color:var(--green-d)}
+.ag-track .blt-ic{background:var(--amber-bg);color:#9a6a10}
+.blt-ic svg{display:block}
+.ni svg{flex:none;opacity:.8}
 .blt h4{font-family:var(--fd);font-weight:700;font-size:16.5px;margin-bottom:3px}
 .blt p{font-size:14.5px;color:var(--t2);line-height:1.5}
 .cta-band{text-align:center;padding:50px 0}
@@ -424,11 +426,11 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
       </div>
       <div class="spine-r">
         <div class="spine-face">
-          <div class="who"><span>▲</span> Para el vendedor</div>
+          <div class="who"><svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor" style="vertical-align:0"><path d="M5 1.5l3.5 6.5h-7z"/></svg> Para el vendedor</div>
           <p>Como nadie ve las otras ofertas, cada agencia tiene que poner su mejor número de entrada. Sin acuerdos por debajo, sin anclarte hacia abajo. Te llevas el precio más alto.</p>
         </div>
         <div class="spine-face ag">
-          <div class="who"><span>▲</span> Para la agencia</div>
+          <div class="who"><svg width="9" height="9" viewBox="0 0 10 10" fill="currentColor" style="vertical-align:0"><path d="M5 1.5l3.5 6.5h-7z"/></svg> Para la agencia</div>
           <p>Como nadie ve tu oferta, no hay guerra de precios. Ganas con tu margen real, no rematando contra otra agencia. Compites por encaje, no por bravata.</p>
         </div>
       </div>
@@ -447,19 +449,19 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
     </div>
     <!-- seller bullets -->
     <div class="bullets sel-only">
-      <div class="blt"><div class="blt-ic">🏁</div><div><h4>El mercado compite por ti.</h4><p>Varias agencias verificadas ofertan por tu auto al mismo tiempo. Tú no persigues a nadie.</p></div></div>
-      <div class="blt"><div class="blt-ic">🔒</div><div><h4>Oferta cerrada, mejor precio.</h4><p>Como ninguna agencia ve la oferta de la otra, cada una pone su mejor número de entrada.</p></div></div>
-      <div class="blt"><div class="blt-ic">⏱</div><div><h4>Una oferta real en 24 horas.</h4><p>No es una estimación. Es un precio firme sobre la mesa.</p></div></div>
-      <div class="blt"><div class="blt-ic">🆓</div><div><h4>Cero costo para ti.</h4><p>Publicar es gratis y vender también. Tú nunca pagas comisiones.</p></div></div>
-      <div class="blt"><div class="blt-ic">✋</div><div><h4>Tú decides.</h4><p>Recibes la oferta más alta y eliges si la aceptas. Sin compromiso.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v16"/><path d="M5 4h11l-2 3.5 2 3.5H5"/></svg></div><div><h4>El mercado compite por ti.</h4><p>Varias agencias verificadas ofertan por tu auto al mismo tiempo. Tú no persigues a nadie.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="12" height="8.5" rx="2"/><path d="M8 10V7.5a3 3 0 0 1 6 0V10"/></svg></div><div><h4>Oferta cerrada, mejor precio.</h4><p>Como ninguna agencia ve la oferta de la otra, cada una pone su mejor número de entrada.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="12.5" r="6.5"/><path d="M11 9v3.5l2.5 1.5"/><path d="M8.5 3.5h5"/></svg></div><div><h4>Una oferta real en 24 horas.</h4><p>No es una estimación. Es un precio firme sobre la mesa.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5l6.5-6.5 7 7-6.5 6.5z"/><circle cx="8" cy="8" r="1.2"/></svg></div><div><h4>Cero costo para ti.</h4><p>Publicar es gratis y vender también. Tú nunca pagas comisiones.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11.5" r="7.5"/><path d="M7.5 11.5l2.5 2.5 5-5"/></svg></div><div><h4>Tú decides.</h4><p>Recibes la oferta más alta y eliges si la aceptas. Sin compromiso.</p></div></div>
     </div>
     <!-- agency bullets -->
     <div class="bullets agc-only ag-track">
-      <div class="blt"><div class="blt-ic">📦</div><div><h4>Inventario verificado, primero.</h4><p>Recibes autos de particulares antes de que lleguen al mercado abierto.</p></div></div>
-      <div class="blt"><div class="blt-ic">🔒</div><div><h4>Oferta cerrada, sin guerra de precios.</h4><p>Nadie ve tu oferta. Ganas con tu margen real, no rematando el precio contra otra agencia.</p></div></div>
-      <div class="blt"><div class="blt-ic">💳</div><div><h4>Pagas solo cuando cierras.</h4><p>Sin suscripción ni costos fijos. Una comisión de 2% únicamente cuando el vendedor acepta tu oferta.</p></div></div>
-      <div class="blt"><div class="blt-ic">🛡</div><div><h4>Cero riesgo.</h4><p>Si no ganas el auto, no pagas nada. Ofertas con total tranquilidad.</p></div></div>
-      <div class="blt"><div class="blt-ic">🔄</div><div><h4>Flujo constante.</h4><p>Autos nuevos publicados cada día, listos para tu pipeline de compra.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l7 3.5v7L11 18l-7-3.5v-7z"/><path d="M4 7.5l7 3.5 7-3.5M11 11v7"/></svg></div><div><h4>Inventario verificado, primero.</h4><p>Recibes autos de particulares antes de que lleguen al mercado abierto.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="12" height="8.5" rx="2"/><path d="M8 10V7.5a3 3 0 0 1 6 0V10"/></svg></div><div><h4>Oferta cerrada, sin guerra de precios.</h4><p>Nadie ve tu oferta. Ganas con tu margen real, no rematando el precio contra otra agencia.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="16" height="10.5" rx="2"/><path d="M3 10h16"/></svg></div><div><h4>Pagas solo cuando cierras.</h4><p>Sin suscripción ni costos fijos. Una comisión de 2% únicamente cuando el vendedor acepta tu oferta.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3.5l6.5 2.2V11c0 4-3 6.8-6.5 8-3.5-1.2-6.5-4-6.5-8V5.7z"/></svg></div><div><h4>Cero riesgo.</h4><p>Si no ganas el auto, no pagas nada. Ofertas con total tranquilidad.</p></div></div>
+      <div class="blt"><div class="blt-ic"><svg viewBox="0 0 22 22" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.5A7 7 0 0 0 5 9"/><path d="M5 4.5V9h4.5"/><path d="M5 15.5A7 7 0 0 0 17 13"/><path d="M17 17.5V13h-4.5"/></svg></div><div><h4>Flujo constante.</h4><p>Autos nuevos publicados cada día, listos para tu pipeline de compra.</p></div></div>
     </div>
   </div></section>
 
@@ -562,7 +564,7 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
       <div class="fstep" data-step="5">
         <div class="feyebrow">Paso 5 · Fotos</div>
         <div style="border:2px dashed var(--line2);border-radius:var(--r2);padding:34px;text-align:center;color:var(--t2)">
-          <div style="font-size:32px;margin-bottom:8px">📷</div>
+          <div style="margin-bottom:10px;color:var(--t3)"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12.5" rx="2.5"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8 7l1.6-2.5h4.8L16 7"/></svg></div>
           <p style="font-weight:600">Arrastra tus fotos aquí o haz clic para subir</p>
           <p style="font-size:13px;color:var(--t3);margin-top:6px">Hasta 10 fotos · La patente se oculta automáticamente</p>
         </div>
@@ -590,7 +592,7 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
 <div id="v-suc" class="view">
   <header class="hdr"><div class="hdr-in"><div class="logo">OVINT<span class="dot"></span>O</div></div></header>
   <div class="form-wrap" style="text-align:center;padding-top:70px">
-    <div style="width:76px;height:76px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 22px">🎉</div>
+    <div style="width:76px;height:76px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 22px"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#087d5b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div>
     <h1 style="font-family:var(--fx);font-weight:800;font-size:34px;letter-spacing:-.02em">¡Tu auto está publicado!</h1>
     <p style="color:var(--t2);font-size:17px;margin:14px auto 6px;max-width:480px">Las agencias ya recibieron la notificación. Recibirás la mejor oferta en las próximas 24 horas por correo y WhatsApp.</p>
     <p class="mono" style="color:var(--green-d);font-weight:700;margin-bottom:28px">OV-2026-00848</p>
@@ -788,7 +790,7 @@ function fillTrk(){const c=CARS[1];const b=bestBid(c);let rem=c.ae-Date.now();if
 // ----- CLIENT OFFER / ACCEPT -----
 function showClientOffer(carId){const c=CARS.find(x=>x.id===carId)||CARS[1];const b=bestBid(c);const amt=net(b.amt,2);
   document.getElementById('ac-body').innerHTML=`
-  <div style="width:64px;height:64px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 18px">💰</div>
+  <div style="width:64px;height:64px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#087d5b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v9"/><path d="M14.3 9.3c-.4-.8-1.3-1.3-2.3-1.3-1.4 0-2.3.8-2.3 1.8 0 2.4 4.8 1.2 4.8 3.6 0 1-1 1.8-2.5 1.8-1.1 0-2-.5-2.4-1.3"/></svg></div>
   <h1 style="font-family:var(--fx);font-weight:800;font-size:27px;letter-spacing:-.02em;line-height:1.1">¡Tenemos una oferta para tu auto!</h1>
   <div style="margin:18px 0">${carThumb(c,'width:140px;height:96px;margin:0 auto')}</div>
   <div style="font-weight:700;font-size:16px">${c.v.marc} ${c.v.mod} ${c.v.yr}</div>
@@ -798,7 +800,7 @@ function showClientOffer(carId){const c=CARS.find(x=>x.id===carId)||CARS[1];cons
   <p style="font-size:11.5px;color:var(--t3);margin-top:16px;line-height:1.5">Al aceptar, coordinaremos la entrega del vehículo. La oferta es firme y sin costo para ti.</p>`;
   go('v-ac');}
 function acAccept(id,amt){document.getElementById('ac-body').innerHTML=`
-  <div style="width:72px;height:72px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 18px">🎉</div>
+  <div style="width:72px;height:72px;border-radius:50%;background:var(--green-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 18px"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#087d5b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
   <h1 style="font-family:var(--fx);font-weight:800;font-size:27px;letter-spacing:-.02em;line-height:1.1">¡Felicitaciones!</h1>
   <p style="color:var(--t2);margin:14px 0 6px;font-size:16px">Aceptaste la oferta de <b style="color:var(--green-d)">${fmt(amt)}</b>. Un agente de OVINTO te contactará para coordinar la entrega.</p>
   <p class="mono" style="color:var(--green-d);font-weight:700;margin:10px 0 24px">${id}</p>
@@ -813,14 +815,31 @@ function doLogin(){cu=USERS.admin;enterDash();}
 function enterDash(){document.getElementById('u-ini').textContent=cu.ini;document.getElementById('u-nm').textContent=cu.nm;document.getElementById('u-rl').textContent=cu.rl;buildNav();go('v-dash');}
 
 const NAVS={
-  admin:[['Resumen','resumen','▦'],['Subastas activas','live','⚡'],['Historial','hist','▤'],['Comisiones','comm','✓'],['Agencias','ags','▢'],['Automotoras','autos','◇'],['Vouchers','vou','◷']],
-  ag:[['Autos disponibles','aglive','⚡'],['Mis ofertas','agmine','▤'],['Pagos','agpay','▢']],
-  mgr:[['Operaciones','mops','▦'],['Vendedores','mslr','◇']],
-  slr:[['Mis clientes','skan','▦'],['Mi QR','sqr','◇']]
+  admin:[['Resumen','resumen'],['Subastas activas','live'],['Historial','hist'],['Comisiones','comm'],['Agencias','ags'],['Automotoras','autos'],['Vouchers','vou']],
+  ag:[['Autos disponibles','aglive'],['Mis ofertas','agmine'],['Pagos','agpay']],
+  mgr:[['Operaciones','mops'],['Vendedores','mslr']],
+  slr:[['Mis clientes','skan'],['Mi QR','sqr']]
 };
 let curPg='';
+const IC={
+  resumen:'<rect x="3" y="3" width="7.5" height="7.5" rx="1.3"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.3"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.3"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.3"/>',
+  live:'<path d="M13 3l-8 11h6l-1 7 8-11h-6z"/>',
+  hist:'<path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.1"/><circle cx="4" cy="12" r="1.1"/><circle cx="4" cy="18" r="1.1"/>',
+  comm:'<path d="M4 12.5l5 5L20 6.5"/>',
+  ags:'<rect x="5" y="3" width="13" height="18" rx="1.3"/><path d="M9 7h1.5M14 7h1.5M9 11h1.5M14 11h1.5M9 15h6"/>',
+  autos:'<path d="M4 14l2-5.5h11L19 14"/><rect x="3" y="14" width="17" height="5" rx="1.6"/><circle cx="7.5" cy="19" r="1.5"/><circle cx="15.5" cy="19" r="1.5"/>',
+  vou:'<path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h13A1.5 1.5 0 0 1 20 7.5v2a2 2 0 0 0 0 5v2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 16.5v-2a2 2 0 0 0 0-5z"/>',
+  aglive:'<path d="M13 3l-8 11h6l-1 7 8-11h-6z"/>',
+  agmine:'<path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1.1"/><circle cx="4" cy="12" r="1.1"/><circle cx="4" cy="18" r="1.1"/>',
+  agpay:'<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/>',
+  mops:'<rect x="3" y="3" width="7.5" height="7.5" rx="1.3"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.3"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.3"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.3"/>',
+  mslr:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M17 19a5.5 5.5 0 0 0-2-4.2"/>',
+  skan:'<rect x="3" y="4" width="5" height="16" rx="1.2"/><rect x="9.5" y="4" width="5" height="11" rx="1.2"/><rect x="16" y="4" width="5" height="14" rx="1.2"/>',
+  sqr:'<rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1"/><path d="M14 14h3.5v3.5M20.5 14v6.5M14 20.5h3.5"/>'
+};
+function navIcon(k){return '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(IC[k]||'')+'</svg>';}
 function buildNav(){const n=NAVS[cu.role];const g=document.getElementById('nav');
-  g.innerHTML=`<div class="side-grp">${cu.role==='admin'?'Operaciones':'Panel'}</div>`+n.map((it,i)=>`<button class="ni ${i===0?'on':''}" onclick="nav('${it[1]}')"><span style="opacity:.6">${it[2]}</span> ${it[0]}${it[1]==='ags'&&cu.role==='admin'?'<span class="nbadge">1</span>':''}</button>`).join('');
+  g.innerHTML=`<div class="side-grp">${cu.role==='admin'?'Operaciones':'Panel'}</div>`+n.map((it,i)=>`<button class="ni ${i===0?'on':''}" onclick="nav('${it[1]}')">${navIcon(it[1])} ${it[0]}${it[1]==='ags'&&cu.role==='admin'?'<span class="nbadge">1</span>':''}</button>`).join('');
   nav(n[0][1]);}
 function nav(pg){curPg=pg;document.querySelectorAll('#nav .ni').forEach((el,i)=>el.classList.toggle('on',NAVS[cu.role][i][1]===pg));
   document.getElementById('mc').innerHTML=(RENDER[pg]||(()=>'<p>—</p>'))();}
@@ -843,7 +862,7 @@ const RENDER={
     ${active.map(c=>{const b=bestBid(c);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="badge b-green"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block"></span>En subasta</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
     <div class="acard-grid"><div><div style="display:flex;gap:14px;align-items:center">${carThumb(c,'width:108px;height:74px')}<div><h3 style="margin:0 0 2px">${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.cl.n} ${c.cl.a} · ${fmtKm(c.v.km)} · ${c.v.color}</div></div></div>
     <div class="bids" style="padding:8px 0 0">${c.bids.length?rankRows(c,true):'<p style="color:var(--t3);font-size:14px;padding:8px 0">Aún sin ofertas</p>'}</div>
-    <div class="acard-actions"><button class="btn btn-gh btn-sm" onclick="carModal('${c.id}')">Ver ficha</button>${b?`<button class="btn btn-g btn-sm" onclick="sendModal('${c.id}')">Enviar mejor oferta al cliente →</button>`:''}<span class="comm-tag">Comisión: 2% <button onclick="toast('Editar comisión (demo)')">✎</button></span></div></div>
+    <div class="acard-actions"><button class="btn btn-gh btn-sm" onclick="carModal('${c.id}')">Ver ficha</button>${b?`<button class="btn btn-g btn-sm" onclick="sendModal('${c.id}')">Enviar mejor oferta al cliente →</button>`:''}<span class="comm-tag">Comisión: 2% <button onclick="toast('Editar comisión (demo)')"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M5 19h3.5L19 8.5 15.5 5 5 15.5z"/><path d="M13.5 6.5l4 4"/></svg></button></span></div></div>
     <div class="timer-box"><div class="lbl">Cierra en</div><div class="tm" data-timer="${c.ae}">--:--:--</div><div style="font-size:12px;color:var(--t2);margin-top:6px">${c.bids.length} oferta(s)</div></div></div></div>`}).join('')}`;},
 
   hist(){const rows=CARS.filter(c=>c.status!=='auction');
@@ -860,11 +879,11 @@ const RENDER={
     </tbody></table></div>`;},
 
   ags(){return `<div class="page-h">Red de agencias</div><div class="page-sub">${AGENCIES.filter(a=>a.status==='active').length} agencias activas</div>
-    <div class="alert">⚠ 1 solicitud pendiente de aprobación</div>
+    <div class="alert"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.5h.01"/></svg> 1 solicitud pendiente de aprobación</div>
     <div class="card"><div class="ag-list">
     ${AGENCIES.map(a=>{const sb={active:['b-green','Activa'],blocked:['b-red','Bloqueada'],pending:['b-amber','Pendiente']}[a.status];
     const act=a.status==='pending'?'<button class="btn btn-g btn-sm" onclick="toast(\'Agencia aprobada\')">Aprobar</button> <button class="btn btn-gh btn-sm" onclick="toast(\'Rechazada\')">Rechazar</button>':a.status==='blocked'?'<button class="btn btn-gh btn-sm" onclick="toast(\'Desbloqueada\')">Desbloquear</button>':'<button class="btn btn-gh btn-sm" onclick="toast(\'Bloqueada\')">Bloquear</button>';
-    return `<div class="ag-item"><div><div class="co">${a.name}</div><div class="sm">${a.rut}</div></div><div><div style="font-weight:600;font-size:13.5px">${a.resp}</div><div class="sm">${a.email}</div></div><div style="font-weight:700">${a.commPct}% <button onclick="toast('Editar comisión')" style="color:var(--green-d)">✎</button></div><div><span class="badge ${sb[0]}">${sb[1]}</span></div><div>${act}</div></div>`}).join('')}
+    return `<div class="ag-item"><div><div class="co">${a.name}</div><div class="sm">${a.rut}</div></div><div><div style="font-weight:600;font-size:13.5px">${a.resp}</div><div class="sm">${a.email}</div></div><div style="font-weight:700">${a.commPct}% <button onclick="toast('Editar comisión')" style="color:var(--green-d)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M5 19h3.5L19 8.5 15.5 5 5 15.5z"/><path d="M13.5 6.5l4 4"/></svg></button></div><div><span class="badge ${sb[0]}">${sb[1]}</span></div><div>${act}</div></div>`}).join('')}
     </div></div>`;},
 
   autos(){const AM=[{n:'AutoMotora San Carlos',s:[['AL','Andrea López','vendedor@ovinto.cl'],['TH','Tomás Herrera','t.herrera@automotora.cl']]},{n:'Motor Plus Santiago',s:[['CR','Carlos Ruiz','c.ruiz@motorplus.cl']]},{n:'Premier Motors',s:[]}];
@@ -919,7 +938,7 @@ const RENDER={
     <tr><td class="id">OV-2026-00844</td><td>Mazda CX-5 2022</td><td class="green">${fmt(277500)}</td><td>26 jun 2026</td><td><span class="badge b-green">Pagada</span></td></tr>
     </tbody></table></div>`;},
   sqr(){return `<div class="page-h">Mi QR</div><div class="page-sub">Vincula clientes a tu nombre</div>
-    <div class="card" style="padding:30px;text-align:center;max-width:360px"><div style="width:180px;height:180px;margin:0 auto 18px;background:var(--ink);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px">▦ QR</div>
+    <div class="card" style="padding:30px;text-align:center;max-width:360px"><div style="width:180px;height:180px;margin:0 auto 18px;background:var(--ink);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;padding:18px"><svg viewBox="0 0 100 100" width="144" height="144"><g fill="#fff"><rect x="8" y="8" width="26" height="26"/><rect x="66" y="8" width="26" height="26"/><rect x="8" y="66" width="26" height="26"/></g><g fill="#0E1A2B"><rect x="12" y="12" width="18" height="18"/><rect x="70" y="12" width="18" height="18"/><rect x="12" y="70" width="18" height="18"/></g><g fill="#fff"><rect x="16" y="16" width="10" height="10"/><rect x="74" y="16" width="10" height="10"/><rect x="16" y="74" width="10" height="10"/><rect x="42" y="8" width="6" height="6"/><rect x="54" y="14" width="6" height="6"/><rect x="42" y="26" width="6" height="6"/><rect x="8" y="42" width="6" height="6"/><rect x="20" y="42" width="6" height="6"/><rect x="32" y="48" width="6" height="6"/><rect x="42" y="42" width="6" height="6"/><rect x="54" y="42" width="6" height="6"/><rect x="66" y="42" width="6" height="6"/><rect x="80" y="42" width="6" height="6"/><rect x="42" y="54" width="6" height="6"/><rect x="60" y="54" width="6" height="6"/><rect x="74" y="54" width="6" height="6"/><rect x="42" y="66" width="6" height="6"/><rect x="56" y="66" width="6" height="6"/><rect x="68" y="68" width="6" height="6"/><rect x="80" y="66" width="6" height="6"/><rect x="48" y="80" width="6" height="6"/><rect x="62" y="80" width="6" height="6"/><rect x="76" y="80" width="6" height="6"/></g></svg></div>
     <p style="font-size:14px;color:var(--t2);margin-bottom:16px">Cuando un cliente escanea este QR, sus datos quedan vinculados a tu nombre.</p>
     <button class="btn btn-ink" onclick="toast('QR descargado')">Descargar QR</button></div>`;}
 };
@@ -937,7 +956,7 @@ function carModal(id){const c=CARS.find(x=>x.id===id);const isAdmin=cu&&cu.role=
 function sendModal(id){const c=CARS.find(x=>x.id===id);const b=bestBid(c);
   document.getElementById('ov-t').textContent='Enviar oferta al cliente';
   document.getElementById('ov-b').innerHTML=`<div class="dgrid"><div class="di"><div class="k">Agencia ganadora</div><div class="v">${agName(b.agId)}</div></div><div class="di"><div class="k">Oferta bruta</div><div class="v">${fmt(b.amt)}</div></div>
-  <div class="di"><div class="k">Comisión OVINTO</div><div class="v">2% <button onclick="toast('Editar %')" style="color:var(--green-d)">✎</button></div></div><div class="di"><div class="k">Vehículo</div><div class="v">${c.v.marc} ${c.v.mod}</div></div></div>
+  <div class="di"><div class="k">Comisión OVINTO</div><div class="v">2% <button onclick="toast('Editar %')" style="color:var(--green-d)"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M5 19h3.5L19 8.5 15.5 5 5 15.5z"/><path d="M13.5 6.5l4 4"/></svg></button></div></div><div class="di"><div class="k">Vehículo</div><div class="v">${c.v.marc} ${c.v.mod}</div></div></div>
   <div class="big-net"><div class="l">El cliente recibe</div><div class="n">${fmt(net(b.amt,2))}</div></div>
   <div class="msg-prev">"Hola ${c.cl.n}, tenemos una oferta de ${fmt(net(b.amt,2))} por tu ${c.v.marc} ${c.v.mod}. Ingresa para aceptarla. — OVINTO"</div>
   <button class="btn btn-g" style="width:100%;justify-content:center" onclick="closeOv();toast('Oferta enviada. Vista previa de lo que recibe el cliente:');setTimeout(function(){showClientOffer('${id}')},750)">Enviar oferta al cliente →</button>`;
