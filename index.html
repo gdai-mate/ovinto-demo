@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>OVINTO — El mejor precio gana</title>
+<title>OVINTO — Vende tu auto al mejor precio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -392,13 +392,13 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
             <span>✓ Sin costo para ti</span>
             <span>✓ 100% online</span>
           </div>
-          <p class="comm-note">Las agencias pagan una pequeña comisión a OVINTO solo si tú aceptas. Tú nunca pagas. Y como ofertan a sobre cerrado, igual compiten por darte el mejor precio.</p>
+          <p class="comm-note">El monto que ves es lo que recibes, completo. Sin comisiones ni descuentos para ti: ese número es enteramente tuyo.</p>
         </div>
         <!-- agency -->
         <div class="agc-only">
           <div class="eyebrow amb"><span class="pulse"></span>Inventario verificado, primero</div>
           <h1 class="hero-h">Accede a autos verificados <em style="color:var(--amber)">antes</em> que tu competencia.</h1>
-          <p class="hero-sub">Cada día, vendedores particulares publican sus autos en OVINTO. Tú ofertas a sobre cerrado, ganas con tu número real y pagas solo cuando cierras. Sin suscripción, sin guerra de precios.</p>
+          <p class="hero-sub">Cada día, vendedores particulares publican sus autos en OVINTO. Ofertas a sobre cerrado con tu mejor número. La oferta más alta se le presenta al cliente, y si la acepta, pagas solo entonces. Sin suscripción, sin guerra de precios.</p>
           <div class="hero-cta">
             <button class="btn btn-ink btn-lg" onclick="go('v-login')">Quiero recibir autos →</button>
             <a class="btn btn-gh btn-lg" href="#como">Cómo funciona</a>
@@ -422,7 +422,7 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
     <div class="spine">
       <div class="spine-l">
         <h2>Una sola mecánica. El mejor precio para los dos lados.</h2>
-        <p>La subasta cerrada de 24 horas. El vendedor publica. Las agencias verificadas compiten a sobre cerrado. Nadie ve la oferta del otro, así que cada una ofrece su mejor precio. Gana la oferta más alta.</p>
+        <p>La subasta cerrada de 24 horas. El vendedor publica. Las agencias verificadas compiten a sobre cerrado. Nadie ve la oferta del otro, así que cada una ofrece su mejor precio. La oferta más alta se le presenta al cliente, que decide si la acepta.</p>
       </div>
       <div class="spine-r">
         <div class="spine-face">
@@ -642,7 +642,7 @@ try{if(sessionStorage.getItem('ov_ok')==='1')document.getElementById('gate').sty
   <div class="auth">
     <div class="auth-l">
       <div class="logo" style="color:#fff">OVINT<span class="dot"></span>O</div>
-      <div class="q">El mercado compite.<br><em>El mejor precio gana.</em></div>
+      <div class="q">El mercado<br><em>compite por tu auto.</em></div>
       <div class="ftq">Plataforma B2B de subastas de autos usados · Chile</div>
     </div>
     <div class="auth-r">
@@ -893,7 +893,7 @@ const RENDER={
   // AGENCY
   aglive(){const active=CARS.filter(c=>c.status==='auction');
     return `<div class="page-h">Autos disponibles</div><div class="page-sub">Ofertas a sobre cerrado · nadie ve tu número</div>
-    <div class="alert" style="background:var(--green-bg);border-color:#bce7d8;color:var(--green-d)">Ofrece tu mejor precio. Nadie ve la oferta de las otras agencias. Ganas con tu número real.</div>
+    <div class="alert" style="background:var(--green-bg);border-color:#bce7d8;color:var(--green-d)">Ofrece tu mejor precio. Nadie ve la oferta de las otras agencias. La oferta más alta se le presenta al cliente, que decide si la acepta: ganar la puja no garantiza el auto.</div>
     ${active.map(c=>{const mine=c.bids.find(b=>b.agId===cu.agId);return `<div class="card acard"><div class="acard-top"><span class="opid">${c.id}</span><span class="cond c${c.v.cond}">${c.v.cond}</span></div>
     <div class="acard-grid"><div><div style="display:flex;gap:14px;align-items:center">${carThumb(c,'width:108px;height:74px')}<div><h3 style="margin:0 0 2px">${c.v.marc} ${c.v.mod} ${c.v.yr}</h3><div class="meta">${c.v.color} · ${fmtKm(c.v.km)} · Automática · ${c.v.cond==='A'?'Excelente':'Buen'} estado</div></div></div>
     <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><span class="badge b-green">✓ Service al día</span><span class="badge b-green">✓ Revisión técnica</span><span class="badge b-green">✓ Permiso circ.</span></div>
